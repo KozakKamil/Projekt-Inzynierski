@@ -1,0 +1,97 @@
+﻿<Window x:Class="ProjektInz.LoginPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektInz"
+        mc:Ignorable="d"
+        Title="LoginPage" Height="1024" Width="1440">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Column="0" Grid.RowSpan="2">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="{StaticResource MainBackgroundColor }"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Grid.Column="1" Grid.RowSpan="2">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="{StaticResource SecondaryBackgroundColor }"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="0" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Margin="10,0,0,0" Content="Login to your account" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="40" Foreground="{StaticResource PrimaryTextColor}"></Label>
+                <Label Grid.Row="1" Margin="10,0,0,0" Content="Email" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" FontSize="20" Foreground="{StaticResource PrimaryTextColor}"/>
+                <Border Grid.Row="2" Style="{StaticResource BorderStyle}">
+                    <TextBox BorderBrush="Transparent" BorderThickness="0" FontSize="20" VerticalAlignment="Center" Margin="10,0,10,0" Name="LoginTextBox"/>
+                </Border>
+                <Label Grid.Row="3" Margin="10,0,0,0" Content="Password" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" FontSize="20" Foreground="{StaticResource PrimaryTextColor}"/>
+                <Border Grid.Row="4" Style="{StaticResource BorderStyle}">
+                    <PasswordBox BorderBrush="Transparent" BorderThickness="0" FontSize="20" VerticalAlignment="Center" Margin="10,0,10,0" Name="PasswordTextBox"/>
+                </Border>
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="67*"/>
+                        <ColumnDefinition Width="173*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Forget your password?" Margin="70,0,0,0" FontSize="12" Foreground="{StaticResource PrimaryTextColor}"/>
+                    <Label Content="Let us reset it for you!" FontSize="12" Foreground="{StaticResource SecondaryTextColor}" Margin="192,0,0,0" Grid.ColumnSpan="2"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Name="ErrorMassage" Grid.Row="1" Content="Your email or password is incorrect!Try again or contact your IT administrator." Foreground="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.3*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="Login" FontSize="15" Margin="100,0,100,40" Style="{StaticResource ButtonStyle}" Foreground="{StaticResource AddTextColor}" Click="Button_Click"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Content="Warehouse documentation" VerticalContentAlignment="Bottom" HorizontalAlignment="Center" FontSize="20" Foreground="{StaticResource AddTextColor}"/>
+                    <Label Grid.Row="1" Content="in your hands!" VerticalContentAlignment="Top" HorizontalAlignment="Center" FontSize="20" Foreground="{StaticResource AddTextColor}"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
