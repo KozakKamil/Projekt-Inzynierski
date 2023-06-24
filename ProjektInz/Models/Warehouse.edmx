@@ -1,0 +1,1085 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WarehousedbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Adress">
+          <Key>
+            <PropertyRef Name="Id_adress" />
+          </Key>
+          <Property Name="Id_adress" Type="int" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Street" Type="varchar" MaxLength="100" />
+          <Property Name="House_number" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Office_number" Type="varchar" MaxLength="10" />
+          <Property Name="Postal_code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="Id_company" />
+          </Key>
+          <Property Name="Id_company" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Id_adress" Type="int" />
+          <Property Name="Id_company_type" Type="int" />
+          <Property Name="Number" Type="varchar" MaxLength="15" />
+          <Property Name="Email_adress" Type="varchar" MaxLength="50" />
+          <Property Name="NIP" Type="varchar" MaxLength="15" />
+          <Property Name="REGON" Type="varchar" MaxLength="15" />
+          <Property Name="Contact_person" Type="varchar" MaxLength="100" />
+          <Property Name="Bank" Type="varchar" MaxLength="50" />
+          <Property Name="Account_number" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Company_Type">
+          <Key>
+            <PropertyRef Name="Id_company_type" />
+          </Key>
+          <Property Name="Id_company_type" Type="int" Nullable="false" />
+          <Property Name="Company_type" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dangerous_Goods">
+          <Key>
+            <PropertyRef Name="Id_ADR" />
+          </Key>
+          <Property Name="Id_ADR" Type="int" Nullable="false" />
+          <Property Name="ADR_number" Type="int" Nullable="false" />
+          <Property Name="ADR_name" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Document_type">
+          <Key>
+            <PropertyRef Name="Id_type" />
+          </Key>
+          <Property Name="Id_type" Type="int" Nullable="false" />
+          <Property Name="Type_name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pallet">
+          <Key>
+            <PropertyRef Name="Id_pallet" />
+          </Key>
+          <Property Name="Id_pallet" Type="int" Nullable="false" />
+          <Property Name="QR_code" Type="int" Nullable="false" />
+          <Property Name="Id_warehouse" Type="int" Nullable="false" />
+          <Property Name="Id_type" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pallet_type">
+          <Key>
+            <PropertyRef Name="Id_type" />
+          </Key>
+          <Property Name="Id_type" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Width" Type="int" Nullable="false" />
+          <Property Name="Lenght" Type="int" Nullable="false" />
+          <Property Name="Height" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Position_title">
+          <Key>
+            <PropertyRef Name="Id_position" />
+          </Key>
+          <Property Name="Id_position" Type="int" Nullable="false" />
+          <Property Name="Position_name" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id_product" />
+          </Key>
+          <Property Name="Id_product" Type="int" Nullable="false" />
+          <Property Name="Product_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Product_code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Minimum_stock" Type="int" />
+          <Property Name="Product_desc" Type="varchar" MaxLength="255" />
+          <Property Name="Id_ADR" Type="int" />
+        </EntityType>
+        <EntityType Name="VAT_rate">
+          <Key>
+            <PropertyRef Name="Id_VAT" />
+          </Key>
+          <Property Name="Id_VAT" Type="int" Nullable="false" />
+          <Property Name="VAT_rate" Type="float" Nullable="false" />
+          <Property Name="Comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Warehouse">
+          <Key>
+            <PropertyRef Name="Id_warehouse" />
+          </Key>
+          <Property Name="Id_warehouse" Type="int" Nullable="false" />
+          <Property Name="Shelf_number" Type="int" Nullable="false" />
+          <Property Name="Rack_number" Type="int" Nullable="false" />
+          <Property Name="Lane_number" Type="int" Nullable="false" />
+          <Property Name="IsBusy" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Warehouse_document">
+          <Key>
+            <PropertyRef Name="Id_document" />
+          </Key>
+          <Property Name="Id_document" Type="int" Nullable="false" />
+          <Property Name="Doc_number" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_foreign_company" Type="int" Nullable="false" />
+          <Property Name="Id_our_company" Type="int" Nullable="false" />
+          <Property Name="Id_type" Type="int" Nullable="false" />
+          <Property Name="Id_worker" Type="int" Nullable="false" />
+          <Property Name="Issue_date" Type="date" Nullable="false" />
+          <Property Name="Operation_date" Type="date" Nullable="false" />
+          <Property Name="Comments" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Warehouse_Operation">
+          <Key>
+            <PropertyRef Name="Id_operation" />
+          </Key>
+          <Property Name="Id_operation" Type="int" Nullable="false" />
+          <Property Name="Id_document" Type="int" Nullable="false" />
+          <Property Name="Unit_weight" Type="int" />
+          <Property Name="Id_product" Type="int" Nullable="false" />
+          <Property Name="Unit_net_price" Type="float" />
+          <Property Name="Amount_product" Type="int" Nullable="false" />
+          <Property Name="Id_VAT" Type="int" />
+          <Property Name="Id_VAT_service" Type="int" />
+          <Property Name="Service_net_price" Type="float" />
+          <Property Name="Id_pallet" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Worker">
+          <Key>
+            <PropertyRef Name="Id_worker" />
+          </Key>
+          <Property Name="Id_worker" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Id_adress" Type="int" />
+          <Property Name="Id_position" Type="int" />
+          <Property Name="Surname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Email_adress" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Hash" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Salt" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PESEL" Type="varchar" MaxLength="11" />
+          <Property Name="Birth_date" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Company__Id_adre__45BE5BA9">
+          <End Role="Adress" Type="Self.Adress" Multiplicity="0..1" />
+          <End Role="Company" Type="Self.Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adress">
+              <PropertyRef Name="Id_adress" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="Id_adress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Company__Id_comp__46B27FE2">
+          <End Role="Company_Type" Type="Self.Company_Type" Multiplicity="0..1" />
+          <End Role="Company" Type="Self.Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company_Type">
+              <PropertyRef Name="Id_company_type" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="Id_company_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pallet__Id_type__540C7B00">
+          <End Role="Pallet_type" Type="Self.Pallet_type" Multiplicity="1" />
+          <End Role="Pallet" Type="Self.Pallet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pallet_type">
+              <PropertyRef Name="Id_type" />
+            </Principal>
+            <Dependent Role="Pallet">
+              <PropertyRef Name="Id_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pallet__Id_wareh__531856C7">
+          <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
+          <End Role="Pallet" Type="Self.Pallet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Warehouse">
+              <PropertyRef Name="Id_warehouse" />
+            </Principal>
+            <Dependent Role="Pallet">
+              <PropertyRef Name="Id_warehouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Id_ADR__56E8E7AB">
+          <End Role="Dangerous_Goods" Type="Self.Dangerous_Goods" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dangerous_Goods">
+              <PropertyRef Name="Id_ADR" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Id_ADR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_do__59C55456">
+          <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="1" />
+          <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Warehouse_document">
+              <PropertyRef Name="Id_document" />
+            </Principal>
+            <Dependent Role="Warehouse_Operation">
+              <PropertyRef Name="Id_document" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_fo__4D5F7D71">
+          <End Role="Company" Type="Self.Company" Multiplicity="1" />
+          <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="Id_company" />
+            </Principal>
+            <Dependent Role="Warehouse_document">
+              <PropertyRef Name="Id_foreign_company" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_ou__4E53A1AA">
+          <End Role="Company" Type="Self.Company" Multiplicity="1" />
+          <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="Id_company" />
+            </Principal>
+            <Dependent Role="Warehouse_document">
+              <PropertyRef Name="Id_our_company" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_pa__5D95E53A">
+          <End Role="Pallet" Type="Self.Pallet" Multiplicity="1" />
+          <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pallet">
+              <PropertyRef Name="Id_pallet" />
+            </Principal>
+            <Dependent Role="Warehouse_Operation">
+              <PropertyRef Name="Id_pallet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_pr__5AB9788F">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id_product" />
+            </Principal>
+            <Dependent Role="Warehouse_Operation">
+              <PropertyRef Name="Id_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_ty__4F47C5E3">
+          <End Role="Document_type" Type="Self.Document_type" Multiplicity="1" />
+          <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Document_type">
+              <PropertyRef Name="Id_type" />
+            </Principal>
+            <Dependent Role="Warehouse_document">
+              <PropertyRef Name="Id_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_VA__5BAD9CC8">
+          <End Role="VAT_rate" Type="Self.VAT_rate" Multiplicity="0..1" />
+          <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VAT_rate">
+              <PropertyRef Name="Id_VAT" />
+            </Principal>
+            <Dependent Role="Warehouse_Operation">
+              <PropertyRef Name="Id_VAT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_VA__5CA1C101">
+          <End Role="VAT_rate" Type="Self.VAT_rate" Multiplicity="0..1" />
+          <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VAT_rate">
+              <PropertyRef Name="Id_VAT" />
+            </Principal>
+            <Dependent Role="Warehouse_Operation">
+              <PropertyRef Name="Id_VAT_service" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_wo__503BEA1C">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+          <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="Id_worker" />
+            </Principal>
+            <Dependent Role="Warehouse_document">
+              <PropertyRef Name="Id_worker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Worker__Id_adres__498EEC8D">
+          <End Role="Adress" Type="Self.Adress" Multiplicity="0..1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adress">
+              <PropertyRef Name="Id_adress" />
+            </Principal>
+            <Dependent Role="Worker">
+              <PropertyRef Name="Id_adress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Worker__Id_posit__4A8310C6">
+          <End Role="Position_title" Type="Self.Position_title" Multiplicity="0..1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position_title">
+              <PropertyRef Name="Id_position" />
+            </Principal>
+            <Dependent Role="Worker">
+              <PropertyRef Name="Id_position" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WarehousedbModelStoreContainer">
+          <EntitySet Name="Adress" EntityType="Self.Adress" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company_Type" EntityType="Self.Company_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dangerous_Goods" EntityType="Self.Dangerous_Goods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Document_type" EntityType="Self.Document_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pallet" EntityType="Self.Pallet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pallet_type" EntityType="Self.Pallet_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Position_title" EntityType="Self.Position_title" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VAT_rate" EntityType="Self.VAT_rate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Warehouse" EntityType="Self.Warehouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Warehouse_document" EntityType="Self.Warehouse_document" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Warehouse_Operation" EntityType="Self.Warehouse_Operation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Worker" EntityType="Self.Worker" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Company__Id_adre__45BE5BA9" Association="Self.FK__Company__Id_adre__45BE5BA9">
+            <End Role="Adress" EntitySet="Adress" />
+            <End Role="Company" EntitySet="Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Company__Id_comp__46B27FE2" Association="Self.FK__Company__Id_comp__46B27FE2">
+            <End Role="Company_Type" EntitySet="Company_Type" />
+            <End Role="Company" EntitySet="Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pallet__Id_type__540C7B00" Association="Self.FK__Pallet__Id_type__540C7B00">
+            <End Role="Pallet_type" EntitySet="Pallet_type" />
+            <End Role="Pallet" EntitySet="Pallet" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pallet__Id_wareh__531856C7" Association="Self.FK__Pallet__Id_wareh__531856C7">
+            <End Role="Warehouse" EntitySet="Warehouse" />
+            <End Role="Pallet" EntitySet="Pallet" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Id_ADR__56E8E7AB" Association="Self.FK__Product__Id_ADR__56E8E7AB">
+            <End Role="Dangerous_Goods" EntitySet="Dangerous_Goods" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_do__59C55456" Association="Self.FK__Warehouse__Id_do__59C55456">
+            <End Role="Warehouse_document" EntitySet="Warehouse_document" />
+            <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_fo__4D5F7D71" Association="Self.FK__Warehouse__Id_fo__4D5F7D71">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Warehouse_document" EntitySet="Warehouse_document" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_ou__4E53A1AA" Association="Self.FK__Warehouse__Id_ou__4E53A1AA">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Warehouse_document" EntitySet="Warehouse_document" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_pa__5D95E53A" Association="Self.FK__Warehouse__Id_pa__5D95E53A">
+            <End Role="Pallet" EntitySet="Pallet" />
+            <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_pr__5AB9788F" Association="Self.FK__Warehouse__Id_pr__5AB9788F">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_ty__4F47C5E3" Association="Self.FK__Warehouse__Id_ty__4F47C5E3">
+            <End Role="Document_type" EntitySet="Document_type" />
+            <End Role="Warehouse_document" EntitySet="Warehouse_document" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_VA__5BAD9CC8" Association="Self.FK__Warehouse__Id_VA__5BAD9CC8">
+            <End Role="VAT_rate" EntitySet="VAT_rate" />
+            <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_VA__5CA1C101" Association="Self.FK__Warehouse__Id_VA__5CA1C101">
+            <End Role="VAT_rate" EntitySet="VAT_rate" />
+            <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_wo__503BEA1C" Association="Self.FK__Warehouse__Id_wo__503BEA1C">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="Warehouse_document" EntitySet="Warehouse_document" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Worker__Id_adres__498EEC8D" Association="Self.FK__Worker__Id_adres__498EEC8D">
+            <End Role="Adress" EntitySet="Adress" />
+            <End Role="Worker" EntitySet="Worker" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Worker__Id_posit__4A8310C6" Association="Self.FK__Worker__Id_posit__4A8310C6">
+            <End Role="Position_title" EntitySet="Position_title" />
+            <End Role="Worker" EntitySet="Worker" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WarehousedbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Adress">
+          <Key>
+            <PropertyRef Name="Id_adress" />
+          </Key>
+          <Property Name="Id_adress" Type="Int32" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Street" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="House_number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Office_number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Postal_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Companies" Relationship="Self.FK__Company__Id_adre__45BE5BA9" FromRole="Adress" ToRole="Company" />
+          <NavigationProperty Name="Workers" Relationship="Self.FK__Worker__Id_adres__498EEC8D" FromRole="Adress" ToRole="Worker" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="Id_company" />
+          </Key>
+          <Property Name="Id_company" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_adress" Type="Int32" />
+          <Property Name="Id_company_type" Type="Int32" />
+          <Property Name="Number" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Email_adress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="REGON" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Contact_person" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Bank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Account_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Adress" Relationship="Self.FK__Company__Id_adre__45BE5BA9" FromRole="Company" ToRole="Adress" />
+          <NavigationProperty Name="Company_Type" Relationship="Self.FK__Company__Id_comp__46B27FE2" FromRole="Company" ToRole="Company_Type" />
+          <NavigationProperty Name="Warehouse_document" Relationship="Self.FK__Warehouse__Id_fo__4D5F7D71" FromRole="Company" ToRole="Warehouse_document" />
+          <NavigationProperty Name="Warehouse_document1" Relationship="Self.FK__Warehouse__Id_ou__4E53A1AA" FromRole="Company" ToRole="Warehouse_document" />
+        </EntityType>
+        <EntityType Name="Company_Type">
+          <Key>
+            <PropertyRef Name="Id_company_type" />
+          </Key>
+          <Property Name="Id_company_type" Type="Int32" Nullable="false" />
+          <Property Name="Company_type1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Companies" Relationship="Self.FK__Company__Id_comp__46B27FE2" FromRole="Company_Type" ToRole="Company" />
+        </EntityType>
+        <EntityType Name="Dangerous_Goods">
+          <Key>
+            <PropertyRef Name="Id_ADR" />
+          </Key>
+          <Property Name="Id_ADR" Type="Int32" Nullable="false" />
+          <Property Name="ADR_number" Type="Int32" Nullable="false" />
+          <Property Name="ADR_name" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Self.FK__Product__Id_ADR__56E8E7AB" FromRole="Dangerous_Goods" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Document_type">
+          <Key>
+            <PropertyRef Name="Id_type" />
+          </Key>
+          <Property Name="Id_type" Type="Int32" Nullable="false" />
+          <Property Name="Type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Warehouse_document" Relationship="Self.FK__Warehouse__Id_ty__4F47C5E3" FromRole="Document_type" ToRole="Warehouse_document" />
+        </EntityType>
+        <EntityType Name="Pallet">
+          <Key>
+            <PropertyRef Name="Id_pallet" />
+          </Key>
+          <Property Name="Id_pallet" Type="Int32" Nullable="false" />
+          <Property Name="QR_code" Type="Int32" Nullable="false" />
+          <Property Name="Id_warehouse" Type="Int32" Nullable="false" />
+          <Property Name="Id_type" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pallet_type" Relationship="Self.FK__Pallet__Id_type__540C7B00" FromRole="Pallet" ToRole="Pallet_type" />
+          <NavigationProperty Name="Warehouse" Relationship="Self.FK__Pallet__Id_wareh__531856C7" FromRole="Pallet" ToRole="Warehouse" />
+          <NavigationProperty Name="Warehouse_Operation" Relationship="Self.FK__Warehouse__Id_pa__5D95E53A" FromRole="Pallet" ToRole="Warehouse_Operation" />
+        </EntityType>
+        <EntityType Name="Pallet_type">
+          <Key>
+            <PropertyRef Name="Id_type" />
+          </Key>
+          <Property Name="Id_type" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Width" Type="Int32" Nullable="false" />
+          <Property Name="Lenght" Type="Int32" Nullable="false" />
+          <Property Name="Height" Type="Int32" Nullable="false" />
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pallets" Relationship="Self.FK__Pallet__Id_type__540C7B00" FromRole="Pallet_type" ToRole="Pallet" />
+        </EntityType>
+        <EntityType Name="Position_title">
+          <Key>
+            <PropertyRef Name="Id_position" />
+          </Key>
+          <Property Name="Id_position" Type="Int32" Nullable="false" />
+          <Property Name="Position_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Workers" Relationship="Self.FK__Worker__Id_posit__4A8310C6" FromRole="Position_title" ToRole="Worker" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id_product" />
+          </Key>
+          <Property Name="Id_product" Type="Int32" Nullable="false" />
+          <Property Name="Product_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Product_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Minimum_stock" Type="Int32" />
+          <Property Name="Product_desc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Id_ADR" Type="Int32" />
+          <NavigationProperty Name="Dangerous_Goods" Relationship="Self.FK__Product__Id_ADR__56E8E7AB" FromRole="Product" ToRole="Dangerous_Goods" />
+          <NavigationProperty Name="Warehouse_Operation" Relationship="Self.FK__Warehouse__Id_pr__5AB9788F" FromRole="Product" ToRole="Warehouse_Operation" />
+        </EntityType>
+        <EntityType Name="VAT_rate">
+          <Key>
+            <PropertyRef Name="Id_VAT" />
+          </Key>
+          <Property Name="Id_VAT" Type="Int32" Nullable="false" />
+          <Property Name="VAT_rate1" Type="Double" Nullable="false" />
+          <Property Name="Comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Warehouse_Operation" Relationship="Self.FK__Warehouse__Id_VA__5BAD9CC8" FromRole="VAT_rate" ToRole="Warehouse_Operation" />
+          <NavigationProperty Name="Warehouse_Operation1" Relationship="Self.FK__Warehouse__Id_VA__5CA1C101" FromRole="VAT_rate" ToRole="Warehouse_Operation" />
+        </EntityType>
+        <EntityType Name="Warehouse">
+          <Key>
+            <PropertyRef Name="Id_warehouse" />
+          </Key>
+          <Property Name="Id_warehouse" Type="Int32" Nullable="false" />
+          <Property Name="Shelf_number" Type="Int32" Nullable="false" />
+          <Property Name="Rack_number" Type="Int32" Nullable="false" />
+          <Property Name="Lane_number" Type="Int32" Nullable="false" />
+          <Property Name="IsBusy" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Pallets" Relationship="Self.FK__Pallet__Id_wareh__531856C7" FromRole="Warehouse" ToRole="Pallet" />
+        </EntityType>
+        <EntityType Name="Warehouse_document">
+          <Key>
+            <PropertyRef Name="Id_document" />
+          </Key>
+          <Property Name="Id_document" Type="Int32" Nullable="false" />
+          <Property Name="Doc_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_foreign_company" Type="Int32" Nullable="false" />
+          <Property Name="Id_our_company" Type="Int32" Nullable="false" />
+          <Property Name="Id_type" Type="Int32" Nullable="false" />
+          <Property Name="Id_worker" Type="Int32" Nullable="false" />
+          <Property Name="Issue_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Operation_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Company" Relationship="Self.FK__Warehouse__Id_fo__4D5F7D71" FromRole="Warehouse_document" ToRole="Company" />
+          <NavigationProperty Name="Company1" Relationship="Self.FK__Warehouse__Id_ou__4E53A1AA" FromRole="Warehouse_document" ToRole="Company" />
+          <NavigationProperty Name="Document_type" Relationship="Self.FK__Warehouse__Id_ty__4F47C5E3" FromRole="Warehouse_document" ToRole="Document_type" />
+          <NavigationProperty Name="Warehouse_Operation" Relationship="Self.FK__Warehouse__Id_do__59C55456" FromRole="Warehouse_document" ToRole="Warehouse_Operation" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK__Warehouse__Id_wo__503BEA1C" FromRole="Warehouse_document" ToRole="Worker" />
+        </EntityType>
+        <EntityType Name="Warehouse_Operation">
+          <Key>
+            <PropertyRef Name="Id_operation" />
+          </Key>
+          <Property Name="Id_operation" Type="Int32" Nullable="false" />
+          <Property Name="Id_document" Type="Int32" Nullable="false" />
+          <Property Name="Unit_weight" Type="Int32" />
+          <Property Name="Id_product" Type="Int32" Nullable="false" />
+          <Property Name="Unit_net_price" Type="Double" />
+          <Property Name="Amount_product" Type="Int32" Nullable="false" />
+          <Property Name="Id_VAT" Type="Int32" />
+          <Property Name="Id_VAT_service" Type="Int32" />
+          <Property Name="Service_net_price" Type="Double" />
+          <Property Name="Id_pallet" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pallet" Relationship="Self.FK__Warehouse__Id_pa__5D95E53A" FromRole="Warehouse_Operation" ToRole="Pallet" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Warehouse__Id_pr__5AB9788F" FromRole="Warehouse_Operation" ToRole="Product" />
+          <NavigationProperty Name="VAT_rate" Relationship="Self.FK__Warehouse__Id_VA__5BAD9CC8" FromRole="Warehouse_Operation" ToRole="VAT_rate" />
+          <NavigationProperty Name="VAT_rate1" Relationship="Self.FK__Warehouse__Id_VA__5CA1C101" FromRole="Warehouse_Operation" ToRole="VAT_rate" />
+          <NavigationProperty Name="Warehouse_document" Relationship="Self.FK__Warehouse__Id_do__59C55456" FromRole="Warehouse_Operation" ToRole="Warehouse_document" />
+        </EntityType>
+        <EntityType Name="Worker">
+          <Key>
+            <PropertyRef Name="Id_worker" />
+          </Key>
+          <Property Name="Id_worker" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_adress" Type="Int32" />
+          <Property Name="Id_position" Type="Int32" />
+          <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email_adress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Hash" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Salt" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PESEL" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Birth_date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Adress" Relationship="Self.FK__Worker__Id_adres__498EEC8D" FromRole="Worker" ToRole="Adress" />
+          <NavigationProperty Name="Position_title" Relationship="Self.FK__Worker__Id_posit__4A8310C6" FromRole="Worker" ToRole="Position_title" />
+          <NavigationProperty Name="Warehouse_document" Relationship="Self.FK__Warehouse__Id_wo__503BEA1C" FromRole="Worker" ToRole="Warehouse_document" />
+        </EntityType>
+        <Association Name="FK__Company__Id_adre__45BE5BA9">
+          <End Role="Adress" Type="Self.Adress" Multiplicity="0..1" />
+          <End Role="Company" Type="Self.Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adress">
+              <PropertyRef Name="Id_adress" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="Id_adress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Worker__Id_adres__498EEC8D">
+          <End Role="Adress" Type="Self.Adress" Multiplicity="0..1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adress">
+              <PropertyRef Name="Id_adress" />
+            </Principal>
+            <Dependent Role="Worker">
+              <PropertyRef Name="Id_adress" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Company__Id_comp__46B27FE2">
+          <End Role="Company_Type" Type="Self.Company_Type" Multiplicity="0..1" />
+          <End Role="Company" Type="Self.Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company_Type">
+              <PropertyRef Name="Id_company_type" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="Id_company_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_fo__4D5F7D71">
+          <End Role="Company" Type="Self.Company" Multiplicity="1" />
+          <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="Id_company" />
+            </Principal>
+            <Dependent Role="Warehouse_document">
+              <PropertyRef Name="Id_foreign_company" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_ou__4E53A1AA">
+          <End Role="Company" Type="Self.Company" Multiplicity="1" />
+          <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="Id_company" />
+            </Principal>
+            <Dependent Role="Warehouse_document">
+              <PropertyRef Name="Id_our_company" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Id_ADR__56E8E7AB">
+          <End Role="Dangerous_Goods" Type="Self.Dangerous_Goods" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dangerous_Goods">
+              <PropertyRef Name="Id_ADR" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Id_ADR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_ty__4F47C5E3">
+          <End Role="Document_type" Type="Self.Document_type" Multiplicity="1" />
+          <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Document_type">
+              <PropertyRef Name="Id_type" />
+            </Principal>
+            <Dependent Role="Warehouse_document">
+              <PropertyRef Name="Id_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pallet__Id_type__540C7B00">
+          <End Role="Pallet_type" Type="Self.Pallet_type" Multiplicity="1" />
+          <End Role="Pallet" Type="Self.Pallet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pallet_type">
+              <PropertyRef Name="Id_type" />
+            </Principal>
+            <Dependent Role="Pallet">
+              <PropertyRef Name="Id_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pallet__Id_wareh__531856C7">
+          <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
+          <End Role="Pallet" Type="Self.Pallet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Warehouse">
+              <PropertyRef Name="Id_warehouse" />
+            </Principal>
+            <Dependent Role="Pallet">
+              <PropertyRef Name="Id_warehouse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_pa__5D95E53A">
+          <End Role="Pallet" Type="Self.Pallet" Multiplicity="1" />
+          <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pallet">
+              <PropertyRef Name="Id_pallet" />
+            </Principal>
+            <Dependent Role="Warehouse_Operation">
+              <PropertyRef Name="Id_pallet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Worker__Id_posit__4A8310C6">
+          <End Role="Position_title" Type="Self.Position_title" Multiplicity="0..1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position_title">
+              <PropertyRef Name="Id_position" />
+            </Principal>
+            <Dependent Role="Worker">
+              <PropertyRef Name="Id_position" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_pr__5AB9788F">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id_product" />
+            </Principal>
+            <Dependent Role="Warehouse_Operation">
+              <PropertyRef Name="Id_product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_VA__5BAD9CC8">
+          <End Role="VAT_rate" Type="Self.VAT_rate" Multiplicity="0..1" />
+          <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VAT_rate">
+              <PropertyRef Name="Id_VAT" />
+            </Principal>
+            <Dependent Role="Warehouse_Operation">
+              <PropertyRef Name="Id_VAT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_VA__5CA1C101">
+          <End Role="VAT_rate" Type="Self.VAT_rate" Multiplicity="0..1" />
+          <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VAT_rate">
+              <PropertyRef Name="Id_VAT" />
+            </Principal>
+            <Dependent Role="Warehouse_Operation">
+              <PropertyRef Name="Id_VAT_service" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_do__59C55456">
+          <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="1" />
+          <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Warehouse_document">
+              <PropertyRef Name="Id_document" />
+            </Principal>
+            <Dependent Role="Warehouse_Operation">
+              <PropertyRef Name="Id_document" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Warehouse__Id_wo__503BEA1C">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+          <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="Id_worker" />
+            </Principal>
+            <Dependent Role="Warehouse_document">
+              <PropertyRef Name="Id_worker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WarehousedbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Adresses" EntityType="Self.Adress" />
+          <EntitySet Name="Companies" EntityType="Self.Company" />
+          <EntitySet Name="Company_Type" EntityType="Self.Company_Type" />
+          <EntitySet Name="Dangerous_Goods" EntityType="Self.Dangerous_Goods" />
+          <EntitySet Name="Document_type" EntityType="Self.Document_type" />
+          <EntitySet Name="Pallets" EntityType="Self.Pallet" />
+          <EntitySet Name="Pallet_type" EntityType="Self.Pallet_type" />
+          <EntitySet Name="Position_title" EntityType="Self.Position_title" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="VAT_rate" EntityType="Self.VAT_rate" />
+          <EntitySet Name="Warehouses" EntityType="Self.Warehouse" />
+          <EntitySet Name="Warehouse_document" EntityType="Self.Warehouse_document" />
+          <EntitySet Name="Warehouse_Operation" EntityType="Self.Warehouse_Operation" />
+          <EntitySet Name="Workers" EntityType="Self.Worker" />
+          <AssociationSet Name="FK__Company__Id_adre__45BE5BA9" Association="Self.FK__Company__Id_adre__45BE5BA9">
+            <End Role="Adress" EntitySet="Adresses" />
+            <End Role="Company" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Worker__Id_adres__498EEC8D" Association="Self.FK__Worker__Id_adres__498EEC8D">
+            <End Role="Adress" EntitySet="Adresses" />
+            <End Role="Worker" EntitySet="Workers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Company__Id_comp__46B27FE2" Association="Self.FK__Company__Id_comp__46B27FE2">
+            <End Role="Company_Type" EntitySet="Company_Type" />
+            <End Role="Company" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_fo__4D5F7D71" Association="Self.FK__Warehouse__Id_fo__4D5F7D71">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="Warehouse_document" EntitySet="Warehouse_document" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_ou__4E53A1AA" Association="Self.FK__Warehouse__Id_ou__4E53A1AA">
+            <End Role="Company" EntitySet="Companies" />
+            <End Role="Warehouse_document" EntitySet="Warehouse_document" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Id_ADR__56E8E7AB" Association="Self.FK__Product__Id_ADR__56E8E7AB">
+            <End Role="Dangerous_Goods" EntitySet="Dangerous_Goods" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_ty__4F47C5E3" Association="Self.FK__Warehouse__Id_ty__4F47C5E3">
+            <End Role="Document_type" EntitySet="Document_type" />
+            <End Role="Warehouse_document" EntitySet="Warehouse_document" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pallet__Id_type__540C7B00" Association="Self.FK__Pallet__Id_type__540C7B00">
+            <End Role="Pallet_type" EntitySet="Pallet_type" />
+            <End Role="Pallet" EntitySet="Pallets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pallet__Id_wareh__531856C7" Association="Self.FK__Pallet__Id_wareh__531856C7">
+            <End Role="Warehouse" EntitySet="Warehouses" />
+            <End Role="Pallet" EntitySet="Pallets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_pa__5D95E53A" Association="Self.FK__Warehouse__Id_pa__5D95E53A">
+            <End Role="Pallet" EntitySet="Pallets" />
+            <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Worker__Id_posit__4A8310C6" Association="Self.FK__Worker__Id_posit__4A8310C6">
+            <End Role="Position_title" EntitySet="Position_title" />
+            <End Role="Worker" EntitySet="Workers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_pr__5AB9788F" Association="Self.FK__Warehouse__Id_pr__5AB9788F">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_VA__5BAD9CC8" Association="Self.FK__Warehouse__Id_VA__5BAD9CC8">
+            <End Role="VAT_rate" EntitySet="VAT_rate" />
+            <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_VA__5CA1C101" Association="Self.FK__Warehouse__Id_VA__5CA1C101">
+            <End Role="VAT_rate" EntitySet="VAT_rate" />
+            <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_do__59C55456" Association="Self.FK__Warehouse__Id_do__59C55456">
+            <End Role="Warehouse_document" EntitySet="Warehouse_document" />
+            <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Warehouse__Id_wo__503BEA1C" Association="Self.FK__Warehouse__Id_wo__503BEA1C">
+            <End Role="Worker" EntitySet="Workers" />
+            <End Role="Warehouse_document" EntitySet="Warehouse_document" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WarehousedbModelStoreContainer" CdmEntityContainer="WarehousedbEntities">
+          <EntitySetMapping Name="Adresses">
+            <EntityTypeMapping TypeName="WarehousedbModel.Adress">
+              <MappingFragment StoreEntitySet="Adress">
+                <ScalarProperty Name="Id_adress" ColumnName="Id_adress" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="House_number" ColumnName="House_number" />
+                <ScalarProperty Name="Office_number" ColumnName="Office_number" />
+                <ScalarProperty Name="Postal_code" ColumnName="Postal_code" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="WarehousedbModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="Id_company" ColumnName="Id_company" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id_adress" ColumnName="Id_adress" />
+                <ScalarProperty Name="Id_company_type" ColumnName="Id_company_type" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Email_adress" ColumnName="Email_adress" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="REGON" ColumnName="REGON" />
+                <ScalarProperty Name="Contact_person" ColumnName="Contact_person" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="Account_number" ColumnName="Account_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company_Type">
+            <EntityTypeMapping TypeName="WarehousedbModel.Company_Type">
+              <MappingFragment StoreEntitySet="Company_Type">
+                <ScalarProperty Name="Id_company_type" ColumnName="Id_company_type" />
+                <ScalarProperty Name="Company_type1" ColumnName="Company_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dangerous_Goods">
+            <EntityTypeMapping TypeName="WarehousedbModel.Dangerous_Goods">
+              <MappingFragment StoreEntitySet="Dangerous_Goods">
+                <ScalarProperty Name="Id_ADR" ColumnName="Id_ADR" />
+                <ScalarProperty Name="ADR_number" ColumnName="ADR_number" />
+                <ScalarProperty Name="ADR_name" ColumnName="ADR_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Document_type">
+            <EntityTypeMapping TypeName="WarehousedbModel.Document_type">
+              <MappingFragment StoreEntitySet="Document_type">
+                <ScalarProperty Name="Id_type" ColumnName="Id_type" />
+                <ScalarProperty Name="Type_name" ColumnName="Type_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pallets">
+            <EntityTypeMapping TypeName="WarehousedbModel.Pallet">
+              <MappingFragment StoreEntitySet="Pallet">
+                <ScalarProperty Name="Id_pallet" ColumnName="Id_pallet" />
+                <ScalarProperty Name="QR_code" ColumnName="QR_code" />
+                <ScalarProperty Name="Id_warehouse" ColumnName="Id_warehouse" />
+                <ScalarProperty Name="Id_type" ColumnName="Id_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pallet_type">
+            <EntityTypeMapping TypeName="WarehousedbModel.Pallet_type">
+              <MappingFragment StoreEntitySet="Pallet_type">
+                <ScalarProperty Name="Id_type" ColumnName="Id_type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Lenght" ColumnName="Lenght" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Position_title">
+            <EntityTypeMapping TypeName="WarehousedbModel.Position_title">
+              <MappingFragment StoreEntitySet="Position_title">
+                <ScalarProperty Name="Id_position" ColumnName="Id_position" />
+                <ScalarProperty Name="Position_name" ColumnName="Position_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="WarehousedbModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Id_product" ColumnName="Id_product" />
+                <ScalarProperty Name="Product_name" ColumnName="Product_name" />
+                <ScalarProperty Name="Product_code" ColumnName="Product_code" />
+                <ScalarProperty Name="Minimum_stock" ColumnName="Minimum_stock" />
+                <ScalarProperty Name="Product_desc" ColumnName="Product_desc" />
+                <ScalarProperty Name="Id_ADR" ColumnName="Id_ADR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VAT_rate">
+            <EntityTypeMapping TypeName="WarehousedbModel.VAT_rate">
+              <MappingFragment StoreEntitySet="VAT_rate">
+                <ScalarProperty Name="Id_VAT" ColumnName="Id_VAT" />
+                <ScalarProperty Name="VAT_rate1" ColumnName="VAT_rate" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Warehouses">
+            <EntityTypeMapping TypeName="WarehousedbModel.Warehouse">
+              <MappingFragment StoreEntitySet="Warehouse">
+                <ScalarProperty Name="Id_warehouse" ColumnName="Id_warehouse" />
+                <ScalarProperty Name="Shelf_number" ColumnName="Shelf_number" />
+                <ScalarProperty Name="Rack_number" ColumnName="Rack_number" />
+                <ScalarProperty Name="Lane_number" ColumnName="Lane_number" />
+                <ScalarProperty Name="IsBusy" ColumnName="IsBusy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Warehouse_document">
+            <EntityTypeMapping TypeName="WarehousedbModel.Warehouse_document">
+              <MappingFragment StoreEntitySet="Warehouse_document">
+                <ScalarProperty Name="Id_document" ColumnName="Id_document" />
+                <ScalarProperty Name="Doc_number" ColumnName="Doc_number" />
+                <ScalarProperty Name="Id_foreign_company" ColumnName="Id_foreign_company" />
+                <ScalarProperty Name="Id_our_company" ColumnName="Id_our_company" />
+                <ScalarProperty Name="Id_type" ColumnName="Id_type" />
+                <ScalarProperty Name="Id_worker" ColumnName="Id_worker" />
+                <ScalarProperty Name="Issue_date" ColumnName="Issue_date" />
+                <ScalarProperty Name="Operation_date" ColumnName="Operation_date" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Warehouse_Operation">
+            <EntityTypeMapping TypeName="WarehousedbModel.Warehouse_Operation">
+              <MappingFragment StoreEntitySet="Warehouse_Operation">
+                <ScalarProperty Name="Id_operation" ColumnName="Id_operation" />
+                <ScalarProperty Name="Id_document" ColumnName="Id_document" />
+                <ScalarProperty Name="Unit_weight" ColumnName="Unit_weight" />
+                <ScalarProperty Name="Id_product" ColumnName="Id_product" />
+                <ScalarProperty Name="Unit_net_price" ColumnName="Unit_net_price" />
+                <ScalarProperty Name="Amount_product" ColumnName="Amount_product" />
+                <ScalarProperty Name="Id_VAT" ColumnName="Id_VAT" />
+                <ScalarProperty Name="Id_VAT_service" ColumnName="Id_VAT_service" />
+                <ScalarProperty Name="Service_net_price" ColumnName="Service_net_price" />
+                <ScalarProperty Name="Id_pallet" ColumnName="Id_pallet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Workers">
+            <EntityTypeMapping TypeName="WarehousedbModel.Worker">
+              <MappingFragment StoreEntitySet="Worker">
+                <ScalarProperty Name="Id_worker" ColumnName="Id_worker" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id_adress" ColumnName="Id_adress" />
+                <ScalarProperty Name="Id_position" ColumnName="Id_position" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Email_adress" ColumnName="Email_adress" />
+                <ScalarProperty Name="Hash" ColumnName="Hash" />
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="Birth_date" ColumnName="Birth_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
