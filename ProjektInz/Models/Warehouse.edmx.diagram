@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="79054599f48a4f5ea871f974d386aa1b" Name="Diagram1">
+        <EntityTypeShape EntityType="WarehousedbModel.Adress" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehousedbModel.Company" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehousedbModel.Company_Type" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehousedbModel.Dangerous_Goods" Width="1.5" PointX="6" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehousedbModel.Document_type" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehousedbModel.Pallet" Width="1.5" PointX="8.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehousedbModel.Pallet_type" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehousedbModel.Position_title" Width="1.5" PointX="3.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehousedbModel.Product" Width="1.5" PointX="8.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehousedbModel.VAT_rate" Width="1.5" PointX="8.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehousedbModel.Warehouse" Width="1.5" PointX="6" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehousedbModel.Warehouse_document" Width="1.5" PointX="8.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehousedbModel.Warehouse_Operation" Width="1.5" PointX="10.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehousedbModel.Worker" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="WarehousedbModel.FK__Company__Id_adre__45BE5BA9" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehousedbModel.FK__Worker__Id_adres__498EEC8D" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehousedbModel.FK__Company__Id_comp__46B27FE2" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehousedbModel.FK__Warehouse__Id_fo__4D5F7D71" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehousedbModel.FK__Warehouse__Id_ou__4E53A1AA" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehousedbModel.FK__Product__Id_ADR__56E8E7AB" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehousedbModel.FK__Warehouse__Id_ty__4F47C5E3" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehousedbModel.FK__Pallet__Id_type__540C7B00" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehousedbModel.FK__Pallet__Id_wareh__531856C7" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehousedbModel.FK__Warehouse__Id_pa__5D95E53A" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehousedbModel.FK__Worker__Id_posit__4A8310C6" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehousedbModel.FK__Warehouse__Id_pr__5AB9788F" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehousedbModel.FK__Warehouse__Id_VA__5BAD9CC8" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehousedbModel.FK__Warehouse__Id_VA__5CA1C101" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehousedbModel.FK__Warehouse__Id_do__59C55456" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehousedbModel.FK__Warehouse__Id_wo__503BEA1C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
