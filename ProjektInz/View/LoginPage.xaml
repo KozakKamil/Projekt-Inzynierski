@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektInz"
         mc:Ignorable="d"
+        WindowStartupLocation="Manual" Left="0" Top="0"
         Title="LoginPage" Height="1024" Width="1440">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -38,21 +39,17 @@
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Margin="10,0,0,0" Content="Login to your account" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="40" Foreground="{StaticResource PrimaryTextColor}"></Label>
                 <Label Grid.Row="1" Margin="10,0,0,0" Content="Email" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" FontSize="20" Foreground="{StaticResource PrimaryTextColor}"/>
-                <Border Grid.Row="2" Style="{StaticResource BorderStyle}">
+                <Border Grid.Row="2" Style="{StaticResource BorderStyle}" HorizontalAlignment="Left">
                     <TextBox BorderBrush="Transparent" BorderThickness="0" FontSize="20" VerticalAlignment="Center" Margin="10,0,10,0" Name="LoginTextBox"/>
                 </Border>
                 <Label Grid.Row="3" Margin="10,0,0,0" Content="Password" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" FontSize="20" Foreground="{StaticResource PrimaryTextColor}"/>
-                <Border Grid.Row="4" Style="{StaticResource BorderStyle}">
+                <Border Grid.Row="4" Style="{StaticResource BorderStyle}" HorizontalAlignment="Left">
                     <PasswordBox BorderBrush="Transparent" BorderThickness="0" FontSize="20" VerticalAlignment="Center" Margin="10,0,10,0" Name="PasswordTextBox"/>
                 </Border>
-                <Grid Grid.Row="5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="67*"/>
-                        <ColumnDefinition Width="173*"/>
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Content="Forget your password?" Margin="70,0,0,0" FontSize="12" Foreground="{StaticResource PrimaryTextColor}"/>
-                    <Label Content="Let us reset it for you!" FontSize="12" Foreground="{StaticResource SecondaryTextColor}" Margin="192,0,0,0" Grid.ColumnSpan="2"/>
-                </Grid>
+                <StackPanel Margin="70,0,0,0" Orientation="Horizontal" Grid.Row="5">
+                    <Label Content="Forget your password?" FontSize="12" Foreground="{StaticResource PrimaryTextColor}"/>
+                    <Label Content="Let us reset it for you!" FontSize="12" Foreground="{StaticResource SecondaryTextColor}"/>
+                </StackPanel>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.RowDefinitions>
@@ -62,14 +59,8 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Label Name="ErrorMassage" Grid.Row="1" Content="Your email or password is incorrect!Try again or contact your IT administrator." Foreground="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Grid Grid.Row="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1.3*"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Content="Login" FontSize="15" Margin="100,0,100,40" Style="{StaticResource ButtonStyle}" Foreground="{StaticResource AddTextColor}" Click="Button_Click"/>
+                <Button HorizontalAlignment="Left" Margin="60,0,0,0" Width="300" Height="50" Content="Login" FontSize="15" Style="{StaticResource ButtonStyle}" Foreground="{StaticResource AddTextColor}" Click="Button_Click"/>
                 </Grid>
-            </Grid>
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektInz"
         mc:Ignorable="d"
+        WindowStartupLocation="Manual" Left="0" Top="0"
         Title="WMS" Height="1024" Width="1440">
     <Grid>
         <Grid.RowDefinitions>
