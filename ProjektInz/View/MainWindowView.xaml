@@ -31,6 +31,14 @@
                     <SolidColorBrush Color="{StaticResource TopColor}"/>
                 </Rectangle.Fill>
             </Rectangle>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Kartoteka" Width="100"/>
+                <Button Content="Dokumenty" Width="100"/>
+                <Button Content="Odbiorca" Width="100"/>
+                <Button Content="Dostawca" Width="100"/>
+                <Button Content="Pracownik" Width="100"/>
+                <Button Content="Stan" Width="100"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>
