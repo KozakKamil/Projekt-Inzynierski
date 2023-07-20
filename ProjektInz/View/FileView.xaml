@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <DataGrid Grid.Row="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Test1"/>
+                <DataGridTextColumn Header="File"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,10" Orientation="Horizontal">

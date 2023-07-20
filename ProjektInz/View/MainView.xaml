@@ -14,7 +14,7 @@
             <view:FileView DataContext="{Binding}"/>
         </DataTemplate>
         <DataTemplate x:Name="DocumentsViewTemplate" DataType="{x:Type viewmodels:DocumentsViewModel}">
-            <view:FileView DataContext="{Binding}"/>
+            <view:DocumentsView DataContext="{Binding}"/>
         </DataTemplate>
         <DataTemplate x:Name="ReceiverViewTemplate" DataType="{x:Type viewmodels:ReceiverViewModel}">
             <view:ReceiverView DataContext="{Binding}"/>
