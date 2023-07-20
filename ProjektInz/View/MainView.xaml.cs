@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjektInz.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,36 @@ namespace ProjektInz
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnFile_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new FileViewModel();
+        }
+
+        private void btnDocuments_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new DocumentsViewModel();
+        }
+
+        private void btnReceiver_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new ReceiverViewModel();
+        }
+
+        private void btnSupplier_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new SupplierViewModel();
+        }
+
+        private void btnWorker_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new WorkerViewModel();
+        }
+
+        private void btnState_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new StateViewModel();
         }
     }
 }

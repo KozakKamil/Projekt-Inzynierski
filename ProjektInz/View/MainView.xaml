@@ -3,10 +3,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="clr-namespace:ProjektInz.ViewModel"
+        xmlns:view="clr-namespace:ProjektInz.View"
         xmlns:local="clr-namespace:ProjektInz"
         mc:Ignorable="d"
         WindowStartupLocation="Manual" Left="0" Top="0"
         Title="WMS" Height="1024" Width="1440">
+    <Window.Resources>
+        <DataTemplate x:Name="FileViewTemplate" DataType="{x:Type viewmodels:FileViewModel}">
+            <view:FileView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="DocumentsViewTemplate" DataType="{x:Type viewmodels:DocumentsViewModel}">
+            <view:FileView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="ReceiverViewTemplate" DataType="{x:Type viewmodels:ReceiverViewModel}">
+            <view:ReceiverView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="StateViewTemplate" DataType="{x:Type viewmodels:StateViewModel}">
+            <view:StateView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="SupplierViewTemplate" DataType="{x:Type viewmodels:SupplierViewModel}">
+            <view:SupplierView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="WorkerViewTemplate" DataType="{x:Type viewmodels:WorkerViewModel}">
+            <view:WorkerView DataContext="{Binding}"/>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -31,6 +53,16 @@
                     <SolidColorBrush Color="{StaticResource TopColor}"/>
                 </Rectangle.Fill>
             </Rectangle>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnFile" Content="Kartoteka" Width="100" Click="btnFile_Click"/>
+                <Button x:Name="btnDocuments" Content="Dokumenty" Width="100" Click="btnDocuments_Click"/>
+                <Button x:Name="btnReceiver" Content="Odbiorca" Width="100" Click="btnReceiver_Click"/>
+                <Button x:Name="btnSupplier" Content="Dostawca" Width="100" Click="btnSupplier_Click"/>
+                <Button x:Name="btnWorker" Content="Pracownik" Width="100" Click="btnWorker_Click"/>
+                <Button x:Name="btnState" Content="Stan" Width="100" Click="btnState_Click"/>
+            </StackPanel>
+
         </Grid>
+        <ContentControl Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" Content="{Binding}"/>
     </Grid>
 </Window>
