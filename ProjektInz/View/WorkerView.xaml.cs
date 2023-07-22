@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjektInz.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace ProjektInz.View
     /// </summary>
     public partial class WorkerView : UserControl
     {
+        WorkerViewModel workerViewModel;
         public WorkerView()
         {
             InitializeComponent();
+            workerViewModel = new WorkerViewModel();
+            DataContext = workerViewModel;
+            Loaded += async (s, e) => await workerViewModel.GetWorkerData();
         }
     }
 }

@@ -7,7 +7,7 @@
         xmlns:view="clr-namespace:ProjektInz.View"
         xmlns:local="clr-namespace:ProjektInz"
         mc:Ignorable="d"
-        WindowStartupLocation="Manual" Left="0" Top="0"
+        WindowState="Maximized"
         Title="WMS" Height="1024" Width="1440">
     <Window.Resources>
         <DataTemplate x:Name="FileViewTemplate" DataType="{x:Type viewmodels:FileViewModel}">

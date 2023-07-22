@@ -11,7 +11,7 @@ namespace ProjektInz.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Worker
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +19,7 @@ namespace ProjektInz.Models
         {
             this.Warehouse_document = new HashSet<Warehouse_document>();
         }
-    
+
         public int Id_worker { get; set; }
         public string Name { get; set; }
         public Nullable<int> Id_adress { get; set; }
@@ -31,10 +31,15 @@ namespace ProjektInz.Models
         public string Salt { get; set; }
         public string PESEL { get; set; }
         public System.DateTime Birth_date { get; set; }
-    
+
         public virtual Adress Adress { get; set; }
         public virtual Position_title Position_title { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Warehouse_document> Warehouse_document { get; set; }
+
+        public string GetWorkerName
+        {
+            get => Name + " " + Surname;
+        }
     }
 }

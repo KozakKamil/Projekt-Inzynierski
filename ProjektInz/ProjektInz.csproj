@@ -93,6 +93,65 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CompanyType.cs" />
+    <Compile Include="ConnectionDB\Connection.cs" />
+    <Compile Include="Models\Adress.cs">
+      <DependentUpon>Warehouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Company.cs">
+      <DependentUpon>Warehouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Company_Type.cs">
+      <DependentUpon>Warehouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dangerous_Goods.cs">
+      <DependentUpon>Warehouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Document_type.cs">
+      <DependentUpon>Warehouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pallet.cs">
+      <DependentUpon>Warehouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pallet_type.cs">
+      <DependentUpon>Warehouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Position_title.cs">
+      <DependentUpon>Warehouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>Warehouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VAT_rate.cs">
+      <DependentUpon>Warehouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Warehouse.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Warehouse.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Warehouse.cs">
+      <DependentUpon>Warehouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Warehouse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Warehouse.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Warehouse1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Warehouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Warehouse_document.cs">
+      <DependentUpon>Warehouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Warehouse_Operation.cs">
+      <DependentUpon>Warehouse.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Worker.cs">
+      <DependentUpon>Warehouse.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\DocumentsViewModel.cs" />
     <Compile Include="ViewModel\FileViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
@@ -172,63 +231,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Adress.cs">
-      <DependentUpon>Warehouse.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Company.cs">
-      <DependentUpon>Warehouse.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Company_Type.cs">
-      <DependentUpon>Warehouse.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Dangerous_Goods.cs">
-      <DependentUpon>Warehouse.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Document_type.cs">
-      <DependentUpon>Warehouse.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Pallet.cs">
-      <DependentUpon>Warehouse.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Pallet_type.cs">
-      <DependentUpon>Warehouse.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Position_title.cs">
-      <DependentUpon>Warehouse.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Product.cs">
-      <DependentUpon>Warehouse.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VAT_rate.cs">
-      <DependentUpon>Warehouse.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Warehouse.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Warehouse.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Warehouse.cs">
-      <DependentUpon>Warehouse.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Warehouse.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Warehouse.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Warehouse1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Warehouse.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Warehouse_document.cs">
-      <DependentUpon>Warehouse.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Warehouse_Operation.cs">
-      <DependentUpon>Warehouse.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Worker.cs">
-      <DependentUpon>Warehouse.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -262,7 +264,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Models\Warehouse.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -274,9 +278,6 @@
       <DependentUpon>Warehouse.edmx</DependentUpon>
       <LastGenOutput>Warehouse1.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

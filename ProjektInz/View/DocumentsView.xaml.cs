@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjektInz.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,14 @@ namespace ProjektInz.View
     /// </summary>
     public partial class DocumentsView : UserControl
     {
+        DocumentsViewModel viewModel;
         public DocumentsView()
         {
+
             InitializeComponent();
+            viewModel = new DocumentsViewModel();
+            DataContext = viewModel;
+            Loaded += async (s, e) => await viewModel.GetDocumentData();
         }
     }
 }

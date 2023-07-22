@@ -33,5 +33,10 @@ namespace ProjektInz.Models
         public virtual ICollection<Company> Companies { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Worker> Workers { get; set; }
+
+        public string GetAdress
+        {
+            get => City + " " + Street + " " + House_number + " " + Office_number;
+        }
     }
 }
