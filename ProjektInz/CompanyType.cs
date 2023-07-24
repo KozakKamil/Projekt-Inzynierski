@@ -9,5 +9,6 @@ namespace ProjektInz
     static class CompanyType
     {
         public static string Supplier = "Dostawca";
+        public static string Contractor = "Kontrahent";
     }
 }
