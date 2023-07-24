@@ -46,5 +46,11 @@ namespace ProjektInz.ConnectionDB
                 Where(x => x.Company_Type.Company_type1 == CompanyType.Contractor).
                 ToList();
         }
+
+        public async Task<List<Product>> GetProductasData()
+        {
+            var context = new WarehousedbEntities();
+            return context.Products.ToList();
+        }
     }
 }

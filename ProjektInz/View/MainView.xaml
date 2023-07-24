@@ -28,6 +28,9 @@
         <DataTemplate x:Name="WorkerViewTemplate" DataType="{x:Type viewmodels:WorkerViewModel}">
             <view:WorkerView DataContext="{Binding}"/>
         </DataTemplate>
+        <DataTemplate x:Name="ProductViewTemplate" DataType="{x:Type viewmodels:ProductViewModel}">
+            <view:ProductView DataContext="{Binding}"/>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -59,6 +62,7 @@
                 <Button x:Name="btnReceiver" Content="Odbiorca" Width="100" Click="btnReceiver_Click"/>
                 <Button x:Name="btnSupplier" Content="Dostawca" Width="100" Click="btnSupplier_Click"/>
                 <Button x:Name="btnWorker" Content="Pracownik" Width="100" Click="btnWorker_Click"/>
+                <Button x:Name="btnProduct" Content="Produkt" Width="100" Click="btnProduct_Click"/>
                 <Button x:Name="btnState" Content="Stan" Width="100" Click="btnState_Click"/>
             </StackPanel>
 

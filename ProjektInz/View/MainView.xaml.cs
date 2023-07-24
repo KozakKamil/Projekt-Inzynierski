@@ -56,5 +56,10 @@ namespace ProjektInz
         {
             DataContext = new StateViewModel();
         }
+
+        private void btnProduct_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new ProductViewModel();
+        }
     }
 }

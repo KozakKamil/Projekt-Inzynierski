@@ -156,10 +156,14 @@
     <Compile Include="ViewModel\FileViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ProductViewModel.cs" />
     <Compile Include="ViewModel\ReceiverViewModel.cs" />
     <Compile Include="ViewModel\StateViewModel.cs" />
     <Compile Include="ViewModel\SupplierViewModel.cs" />
     <Compile Include="ViewModel\WorkerViewModel.cs" />
+    <Compile Include="View\ProductView.xaml.cs">
+      <DependentUpon>ProductView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ReceiverView.xaml.cs">
       <DependentUpon>ReceiverView.xaml</DependentUpon>
     </Compile>
@@ -210,6 +214,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
