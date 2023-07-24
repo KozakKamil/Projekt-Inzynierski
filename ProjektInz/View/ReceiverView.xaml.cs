@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjektInz.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace ProjektInz.View
     /// </summary>
     public partial class ReceiverView : UserControl
     {
+        ReceiverViewModel viewModel;
         public ReceiverView()
         {
             InitializeComponent();
+            viewModel = new ReceiverViewModel();
+            DataContext = viewModel;
+            Loaded += async (s, e) => await viewModel.GetReceiverData();
         }
     }
 }

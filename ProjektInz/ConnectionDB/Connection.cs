@@ -32,9 +32,11 @@ namespace ProjektInz.ConnectionDB
         public async Task<List<Company>> GetSupplierData()
         {
             var context = new WarehousedbEntities();
-            return context.Companies.
-                Where(x => x.Company_Type.Company_type1 == CompanyType.Supplier).
-                ToList();
+            var c = context.Companies;
+
+            var g = c.Where(x => x.Company_Type.Company_type1 == CompanyType.Supplier).
+            ToList();
+            return g;
         }
 
         public async Task<List<Company>> GetContractorData()
