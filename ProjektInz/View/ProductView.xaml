@@ -13,9 +13,14 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding products}">
+        <DataGrid Grid.Row="0" ItemsSource="{Binding products}" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Product"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id_product}"/>
+                <DataGridTextColumn Header="Nazwa produktu" Binding="{Binding Product_name}"/>
+                <DataGridTextColumn Header="Kod produktu" Binding="{Binding Product_code}"/>
+                <DataGridTextColumn Header="ADR" Binding="{Binding Dangerous_Goods.ADR_number}"/>
+                <DataGridTextColumn Header="Zapas minimalny" Binding="{Binding Minimum_stock}"/>
+                <DataGridTextColumn Header="Opis produktu" Binding="{Binding Product_desc}"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,10" Orientation="Horizontal">

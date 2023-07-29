@@ -35,7 +35,8 @@ namespace ProjektInz.ConnectionDB
             var c = context.Companies;
 
             var g = c.Where(x => x.Company_Type.Company_type1 == CompanyType.Supplier).
-            ToList();
+                Include(x => x.Adress).
+                ToList();
             return g;
         }
 
@@ -44,13 +45,16 @@ namespace ProjektInz.ConnectionDB
             var context = new WarehousedbEntities();
             return context.Companies.
                 Where(x => x.Company_Type.Company_type1 == CompanyType.Contractor).
+                Include(x => x.Adress).
                 ToList();
         }
 
         public async Task<List<Product>> GetProductasData()
         {
             var context = new WarehousedbEntities();
-            return context.Products.ToList();
+            return context.Products.
+                Include(x => x.Dangerous_Goods).
+                ToList();
         }
     }
 }
