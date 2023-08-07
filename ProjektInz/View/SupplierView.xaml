@@ -13,7 +13,7 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding supplierCompany}" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="0" ItemsSource="{Binding supplierCompany}" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id_company}"/>
                 <DataGridTextColumn Header="Nazwa" Binding="{Binding Name}"/>

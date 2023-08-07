@@ -152,6 +152,7 @@
     <Compile Include="Models\Worker.cs">
       <DependentUpon>Warehouse.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\DocumentDetailsViewModel.cs" />
     <Compile Include="ViewModel\DocumentsViewModel.cs" />
     <Compile Include="ViewModel\FileViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
@@ -161,6 +162,9 @@
     <Compile Include="ViewModel\StateViewModel.cs" />
     <Compile Include="ViewModel\SupplierViewModel.cs" />
     <Compile Include="ViewModel\WorkerViewModel.cs" />
+    <Compile Include="View\DocumentDetailsView.xaml.cs">
+      <DependentUpon>DocumentDetailsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
     </Compile>
@@ -176,6 +180,10 @@
     <Compile Include="View\WorkerView.xaml.cs">
       <DependentUpon>WorkerView.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\DocumentDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DocumentsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
