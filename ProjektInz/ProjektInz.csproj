@@ -152,6 +152,11 @@
     <Compile Include="Models\Worker.cs">
       <DependentUpon>Warehouse.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\FileDetailsViewModel.cs" />
+    <Compile Include="ViewModel\WorkerDetailsViewModel.cs" />
+    <Compile Include="ViewModel\SupplierDetailsViewModel.cs" />
+    <Compile Include="ViewModel\ReceiverDetailsViewModel.cs" />
+    <Compile Include="ViewModel\ProductDetailsViewModel .cs" />
     <Compile Include="ViewModel\DocumentDetailsViewModel.cs" />
     <Compile Include="ViewModel\DocumentsViewModel.cs" />
     <Compile Include="ViewModel\FileViewModel.cs" />
@@ -162,11 +167,26 @@
     <Compile Include="ViewModel\StateViewModel.cs" />
     <Compile Include="ViewModel\SupplierViewModel.cs" />
     <Compile Include="ViewModel\WorkerViewModel.cs" />
+    <Compile Include="View\FileDetailsView.xaml.cs">
+      <DependentUpon>FileDetailsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DocumentDetailsView.xaml.cs">
       <DependentUpon>DocumentDetailsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductDetailsView.xaml.cs">
+      <DependentUpon>ProductDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WorkerDetailsView.xaml.cs">
+      <DependentUpon>WorkerDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SupplierDetailsView.xaml.cs">
+      <DependentUpon>SupplierDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReceiverDetailsView.xaml.cs">
+      <DependentUpon>ReceiverDetailsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ReceiverView.xaml.cs">
       <DependentUpon>ReceiverView.xaml</DependentUpon>
@@ -180,6 +200,10 @@
     <Compile Include="View\WorkerView.xaml.cs">
       <DependentUpon>WorkerView.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\FileDetailsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\DocumentDetailsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -226,6 +250,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ProductView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductDetailsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WorkerDetailsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SupplierDetailsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ReceiverDetailsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

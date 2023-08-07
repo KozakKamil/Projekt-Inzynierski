@@ -57,6 +57,16 @@ namespace ProjektInz.ConnectionDB
                 ToList();
         }
 
+        public async Task<List<Warehouse_Operation>> GetFilesData()
+        {
+            var context = new WarehousedbEntities();
+            return context.Warehouse_Operation.
+                Include(x=>x.Product).
+                Include(x=>x.Warehouse_document.Document_type).
+                Include(x=>x.Product.Dangerous_Goods).
+                ToList();
+        }
+
         public async Task<List<Warehouse_Operation>> GetDocumentDetailsData(int Id)
         {
             var context = new WarehousedbEntities();

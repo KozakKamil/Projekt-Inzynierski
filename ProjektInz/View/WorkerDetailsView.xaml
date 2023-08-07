@@ -1,0 +1,42 @@
+﻿<Window x:Class="ProjektInz.View.WorkerDetailsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektInz.View"
+        mc:Ignorable="d"
+        Title="ReceiverDetailsView" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="{StaticResource SecondaryBackgroundColor}"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="1" HorizontalAlignment="Center" Foreground="{StaticResource AddTextColor}"/>
+            <Rectangle Grid.Row="0">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="{StaticResource TopColor}"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+    </Grid>
+</Window>
