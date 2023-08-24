@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjektInz.Models;
+using ProjektInz.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,13 @@ namespace ProjektInz.View
     /// </summary>
     public partial class SupplierDetailsView : Window
     {
-        public SupplierDetailsView()
+        SupplierDetailsViewModel viewModel;
+        public SupplierDetailsView(object supplier)
         {
             InitializeComponent();
+            viewModel = new SupplierDetailsViewModel();
+            DataContext = viewModel;
+            Loaded += async (s, e) => await viewModel.GetSupplierDetailsData(supplier as Company);
         }
     }
 }

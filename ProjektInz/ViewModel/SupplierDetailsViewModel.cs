@@ -14,14 +14,18 @@ namespace ProjektInz.ViewModel
         public Connection _connection;
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public List<Company> CompanyList { get; set; }
+
         public SupplierDetailsViewModel() 
         {
             _connection = new Connection();
         }
 
-        public async Task GetSupplierDetailsData()
+        public async Task GetSupplierDetailsData(Company company)
         {
-
+            CompanyList = await _connection.GetSupplierDetailsData(company.Id_company);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs (nameof(CompanyList)));
         }
     }
 }

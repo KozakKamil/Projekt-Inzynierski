@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjektInz.View"
+        xmlns:local="clr-namespace:ProjektInz.View" xmlns:viewmodel="clr-namespace:ProjektInz.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:WorkerDetailsViewModel}"
         mc:Ignorable="d"
         Title="ReceiverDetailsView" Height="450" Width="800">
     <Grid>
@@ -38,5 +38,23 @@
                 </Rectangle.Fill>
             </Rectangle>
         </Grid>
+        <StackPanel>
+            <Label Content="Imię"/>
+            <Label Content="Nazwisko"/>
+            <Label Content="Stanowisko"/>
+            <Label Content="Data urodzenia"/>
+            <Label Content="PESEL"/>
+            <Label Content="Nr. telefonu"/>
+            <Label Content="Adres e-mail"/>
+            <Label Content="Miasto"/>
+            <Label Content="Ulica"/>
+            <Label Content="Nr. domu"/>
+            <Label Content="Nr. mieszkania"/>
+            <Label Content="Kod pocztowy"/>
+            <Label Content="Kraj"/>
+        </StackPanel>
+        <StackPanel>
+            <Label Content="{Binding Worker}"/>
+        </StackPanel>
     </Grid>
 </Window>

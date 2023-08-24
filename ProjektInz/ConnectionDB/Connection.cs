@@ -75,5 +75,40 @@ namespace ProjektInz.ConnectionDB
                 Include(x => x.Product).
                 ToList();
         }
+
+        public async Task<Product> GetProductDetailsData(int Id)
+        {
+            var context = new WarehousedbEntities();
+            return context.Products.
+                Where(x => x.Id_product == Id).
+                Include(x => x.Dangerous_Goods).FirstOrDefault();
+        }
+
+        public async Task<List<Company>> GetReceiverDetailsData(int Id)
+        {
+            var context = new WarehousedbEntities();
+            return context.Companies.
+                Where(x => x.Company_Type.Company_type1 == CompanyType.Contractor).
+                Where(x => x.Id_company == Id).
+                Include(x => x.Adress).
+                ToList();
+        }
+
+        public async Task<List<Company>> GetSupplierDetailsData(int Id)
+        {
+            var context = new WarehousedbEntities();
+            return context.Companies.
+                Where(x => x.Company_Type.Company_type1 == CompanyType.Supplier).
+                Where(x => x.Id_company == Id).
+                Include(x => x.Adress).
+                ToList();
+        }
+
+        public async Task<Worker> GetWorkerDetailsData(int Id)
+        {
+            var context = new WarehousedbEntities();
+            return context.Workers.
+                Where(x => x.Id_worker == Id).FirstOrDefault();
+        }
     }
 }

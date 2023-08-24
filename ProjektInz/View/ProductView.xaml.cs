@@ -30,5 +30,11 @@ namespace ProjektInz.View
             DataContext = viewModel;
             Loaded += async (s, e) => await viewModel.GetProductData();
         }
+
+        private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var row = e.Source as DataGridRow;
+            new ProductDetailsView(row.Item).ShowDialog();
+        }
     }
 }

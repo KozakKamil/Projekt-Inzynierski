@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjektInz.View"
+        xmlns:local="clr-namespace:ProjektInz.View" xmlns:viewmodel="clr-namespace:ProjektInz.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:ProductDetailsViewModel}"
         mc:Ignorable="d"
         Title="ReceiverDetailsView" Height="450" Width="800">
     <Grid>
@@ -39,5 +39,21 @@
             </Rectangle>
 
         </Grid>
+        <StackPanel Grid.Row="1" Grid.RowSpan="4" HorizontalAlignment="Center">
+            <Label Content="Nazwa produktu"/>
+            <Label Content="Kod produktu"/>
+            <Label Content="Zapas minimalny"/>
+            <Label Content="Numer ADR"/>
+            <Label Content="Nazwa ADR"/>
+            <Label Content="Opis produktu"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" HorizontalAlignment="Center">
+            <Label Content="{Binding Products.Product_name}"/>
+            <Label Content="{Binding Products.Product_code}"/>
+            <Label Content="{Binding Products.Minimum_stock}"/>
+            <Label Content="{Binding Products.Dangerous_Goods.ADR_number}"/>
+            <Label Content="{Binding Products.Dangerous_Goods.ADR_name}"/>
+            <Label Content="{Binding Products.Product_desc}"/>
+        </StackPanel>
     </Grid>
 </Window>

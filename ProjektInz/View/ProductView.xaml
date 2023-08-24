@@ -14,6 +14,11 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <DataGrid Grid.Row="0" ItemsSource="{Binding products}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id_product}"/>
                 <DataGridTextColumn Header="Nazwa produktu" Binding="{Binding Product_name}"/>
