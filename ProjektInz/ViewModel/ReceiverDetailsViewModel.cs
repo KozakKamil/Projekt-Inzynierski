@@ -15,14 +15,17 @@ namespace ProjektInz.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public List<Company> CompanyList { get; set; }
+
         public ReceiverDetailsViewModel() 
         {
             _connection = new Connection();
         }
 
-        public async Task GetReceiverDetailsData()
+        public async Task GetReceiverDetailsData(Company company)
         {
-
+            CompanyList = await _connection.GetReceiverDetailsData(company.Id_company);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CompanyList)));
         }
     }
 }
