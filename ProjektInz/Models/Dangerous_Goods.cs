@@ -22,7 +22,7 @@ namespace ProjektInz.Models
     
         public int Id_ADR { get; set; }
         public int ADR_number { get; set; }
-        public int ADR_name { get; set; }
+        public string ADR_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }

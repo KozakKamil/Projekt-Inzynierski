@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Id_adress" />
           </Key>
-          <Property Name="Id_adress" Type="int" Nullable="false" />
+          <Property Name="Id_adress" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="City" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Street" Type="varchar" MaxLength="100" />
           <Property Name="House_number" Type="varchar" MaxLength="10" Nullable="false" />
@@ -21,7 +21,7 @@
           <Key>
             <PropertyRef Name="Id_company" />
           </Key>
-          <Property Name="Id_company" Type="int" Nullable="false" />
+          <Property Name="Id_company" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Id_adress" Type="int" />
           <Property Name="Id_company_type" Type="int" />
@@ -37,29 +37,29 @@
           <Key>
             <PropertyRef Name="Id_company_type" />
           </Key>
-          <Property Name="Id_company_type" Type="int" Nullable="false" />
+          <Property Name="Id_company_type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Company_type" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Dangerous_Goods">
           <Key>
             <PropertyRef Name="Id_ADR" />
           </Key>
-          <Property Name="Id_ADR" Type="int" Nullable="false" />
+          <Property Name="Id_ADR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ADR_number" Type="int" Nullable="false" />
-          <Property Name="ADR_name" Type="int" Nullable="false" />
+          <Property Name="ADR_name" Type="varchar" MaxLength="200" Nullable="false" />
         </EntityType>
         <EntityType Name="Document_type">
           <Key>
             <PropertyRef Name="Id_type" />
           </Key>
-          <Property Name="Id_type" Type="int" Nullable="false" />
+          <Property Name="Id_type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Type_name" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Pallet">
           <Key>
             <PropertyRef Name="Id_pallet" />
           </Key>
-          <Property Name="Id_pallet" Type="int" Nullable="false" />
+          <Property Name="Id_pallet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="QR_code" Type="int" Nullable="false" />
           <Property Name="Id_warehouse" Type="int" Nullable="false" />
           <Property Name="Id_type" Type="int" Nullable="false" />
@@ -68,7 +68,7 @@
           <Key>
             <PropertyRef Name="Id_type" />
           </Key>
-          <Property Name="Id_type" Type="int" Nullable="false" />
+          <Property Name="Id_type" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Width" Type="int" Nullable="false" />
           <Property Name="Lenght" Type="int" Nullable="false" />
@@ -79,14 +79,14 @@
           <Key>
             <PropertyRef Name="Id_position" />
           </Key>
-          <Property Name="Id_position" Type="int" Nullable="false" />
+          <Property Name="Id_position" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Position_name" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="Id_product" />
           </Key>
-          <Property Name="Id_product" Type="int" Nullable="false" />
+          <Property Name="Id_product" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Product_name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Product_code" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Minimum_stock" Type="int" />
@@ -97,7 +97,7 @@
           <Key>
             <PropertyRef Name="Id_VAT" />
           </Key>
-          <Property Name="Id_VAT" Type="int" Nullable="false" />
+          <Property Name="Id_VAT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="VAT_rate" Type="float" Nullable="false" />
           <Property Name="Comments" Type="varchar" MaxLength="255" />
         </EntityType>
@@ -105,7 +105,7 @@
           <Key>
             <PropertyRef Name="Id_warehouse" />
           </Key>
-          <Property Name="Id_warehouse" Type="int" Nullable="false" />
+          <Property Name="Id_warehouse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Shelf_number" Type="int" Nullable="false" />
           <Property Name="Rack_number" Type="int" Nullable="false" />
           <Property Name="Lane_number" Type="int" Nullable="false" />
@@ -115,7 +115,7 @@
           <Key>
             <PropertyRef Name="Id_document" />
           </Key>
-          <Property Name="Id_document" Type="int" Nullable="false" />
+          <Property Name="Id_document" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Doc_number" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Id_foreign_company" Type="int" Nullable="false" />
           <Property Name="Id_our_company" Type="int" Nullable="false" />
@@ -129,7 +129,7 @@
           <Key>
             <PropertyRef Name="Id_operation" />
           </Key>
-          <Property Name="Id_operation" Type="int" Nullable="false" />
+          <Property Name="Id_operation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_document" Type="int" Nullable="false" />
           <Property Name="Unit_weight" Type="int" />
           <Property Name="Id_product" Type="int" Nullable="false" />
@@ -144,7 +144,7 @@
           <Key>
             <PropertyRef Name="Id_worker" />
           </Key>
-          <Property Name="Id_worker" Type="int" Nullable="false" />
+          <Property Name="Id_worker" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Id_adress" Type="int" />
           <Property Name="Id_position" Type="int" />
@@ -156,7 +156,7 @@
           <Property Name="PESEL" Type="varchar" MaxLength="11" />
           <Property Name="Birth_date" Type="date" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Company__Id_adre__45BE5BA9">
+        <Association Name="FK__Company__Id_adre__1AD3FDA4">
           <End Role="Adress" Type="Self.Adress" Multiplicity="0..1" />
           <End Role="Company" Type="Self.Company" Multiplicity="*" />
           <ReferentialConstraint>
@@ -168,7 +168,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Company__Id_comp__46B27FE2">
+        <Association Name="FK__Company__Id_comp__1BC821DD">
           <End Role="Company_Type" Type="Self.Company_Type" Multiplicity="0..1" />
           <End Role="Company" Type="Self.Company" Multiplicity="*" />
           <ReferentialConstraint>
@@ -180,7 +180,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Pallet__Id_type__540C7B00">
+        <Association Name="FK__Pallet__Id_type__29221CFB">
           <End Role="Pallet_type" Type="Self.Pallet_type" Multiplicity="1" />
           <End Role="Pallet" Type="Self.Pallet" Multiplicity="*" />
           <ReferentialConstraint>
@@ -192,7 +192,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Pallet__Id_wareh__531856C7">
+        <Association Name="FK__Pallet__Id_wareh__282DF8C2">
           <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
           <End Role="Pallet" Type="Self.Pallet" Multiplicity="*" />
           <ReferentialConstraint>
@@ -204,7 +204,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Id_ADR__56E8E7AB">
+        <Association Name="FK__Product__Id_ADR__2BFE89A6">
           <End Role="Dangerous_Goods" Type="Self.Dangerous_Goods" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -216,7 +216,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_do__59C55456">
+        <Association Name="FK__Warehouse__Id_do__2EDAF651">
           <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="1" />
           <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -228,7 +228,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_fo__4D5F7D71">
+        <Association Name="FK__Warehouse__Id_fo__22751F6C">
           <End Role="Company" Type="Self.Company" Multiplicity="1" />
           <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
           <ReferentialConstraint>
@@ -240,7 +240,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_ou__4E53A1AA">
+        <Association Name="FK__Warehouse__Id_ou__236943A5">
           <End Role="Company" Type="Self.Company" Multiplicity="1" />
           <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
           <ReferentialConstraint>
@@ -252,7 +252,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_pa__5D95E53A">
+        <Association Name="FK__Warehouse__Id_pa__32AB8735">
           <End Role="Pallet" Type="Self.Pallet" Multiplicity="1" />
           <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -264,7 +264,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_pr__5AB9788F">
+        <Association Name="FK__Warehouse__Id_pr__2FCF1A8A">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
           <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -276,7 +276,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_ty__4F47C5E3">
+        <Association Name="FK__Warehouse__Id_ty__245D67DE">
           <End Role="Document_type" Type="Self.Document_type" Multiplicity="1" />
           <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
           <ReferentialConstraint>
@@ -288,7 +288,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_VA__5BAD9CC8">
+        <Association Name="FK__Warehouse__Id_VA__30C33EC3">
           <End Role="VAT_rate" Type="Self.VAT_rate" Multiplicity="0..1" />
           <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -300,7 +300,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_VA__5CA1C101">
+        <Association Name="FK__Warehouse__Id_VA__31B762FC">
           <End Role="VAT_rate" Type="Self.VAT_rate" Multiplicity="0..1" />
           <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -312,7 +312,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_wo__503BEA1C">
+        <Association Name="FK__Warehouse__Id_wo__25518C17">
           <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
           <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
           <ReferentialConstraint>
@@ -324,7 +324,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Worker__Id_adres__498EEC8D">
+        <Association Name="FK__Worker__Id_adres__1EA48E88">
           <End Role="Adress" Type="Self.Adress" Multiplicity="0..1" />
           <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
           <ReferentialConstraint>
@@ -336,7 +336,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Worker__Id_posit__4A8310C6">
+        <Association Name="FK__Worker__Id_posit__1F98B2C1">
           <End Role="Position_title" Type="Self.Position_title" Multiplicity="0..1" />
           <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
           <ReferentialConstraint>
@@ -363,67 +363,67 @@
           <EntitySet Name="Warehouse_document" EntityType="Self.Warehouse_document" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Warehouse_Operation" EntityType="Self.Warehouse_Operation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Worker" EntityType="Self.Worker" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Company__Id_adre__45BE5BA9" Association="Self.FK__Company__Id_adre__45BE5BA9">
+          <AssociationSet Name="FK__Company__Id_adre__1AD3FDA4" Association="Self.FK__Company__Id_adre__1AD3FDA4">
             <End Role="Adress" EntitySet="Adress" />
             <End Role="Company" EntitySet="Company" />
           </AssociationSet>
-          <AssociationSet Name="FK__Company__Id_comp__46B27FE2" Association="Self.FK__Company__Id_comp__46B27FE2">
+          <AssociationSet Name="FK__Company__Id_comp__1BC821DD" Association="Self.FK__Company__Id_comp__1BC821DD">
             <End Role="Company_Type" EntitySet="Company_Type" />
             <End Role="Company" EntitySet="Company" />
           </AssociationSet>
-          <AssociationSet Name="FK__Pallet__Id_type__540C7B00" Association="Self.FK__Pallet__Id_type__540C7B00">
+          <AssociationSet Name="FK__Pallet__Id_type__29221CFB" Association="Self.FK__Pallet__Id_type__29221CFB">
             <End Role="Pallet_type" EntitySet="Pallet_type" />
             <End Role="Pallet" EntitySet="Pallet" />
           </AssociationSet>
-          <AssociationSet Name="FK__Pallet__Id_wareh__531856C7" Association="Self.FK__Pallet__Id_wareh__531856C7">
+          <AssociationSet Name="FK__Pallet__Id_wareh__282DF8C2" Association="Self.FK__Pallet__Id_wareh__282DF8C2">
             <End Role="Warehouse" EntitySet="Warehouse" />
             <End Role="Pallet" EntitySet="Pallet" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Id_ADR__56E8E7AB" Association="Self.FK__Product__Id_ADR__56E8E7AB">
+          <AssociationSet Name="FK__Product__Id_ADR__2BFE89A6" Association="Self.FK__Product__Id_ADR__2BFE89A6">
             <End Role="Dangerous_Goods" EntitySet="Dangerous_Goods" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_do__59C55456" Association="Self.FK__Warehouse__Id_do__59C55456">
+          <AssociationSet Name="FK__Warehouse__Id_do__2EDAF651" Association="Self.FK__Warehouse__Id_do__2EDAF651">
             <End Role="Warehouse_document" EntitySet="Warehouse_document" />
             <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_fo__4D5F7D71" Association="Self.FK__Warehouse__Id_fo__4D5F7D71">
+          <AssociationSet Name="FK__Warehouse__Id_fo__22751F6C" Association="Self.FK__Warehouse__Id_fo__22751F6C">
             <End Role="Company" EntitySet="Company" />
             <End Role="Warehouse_document" EntitySet="Warehouse_document" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_ou__4E53A1AA" Association="Self.FK__Warehouse__Id_ou__4E53A1AA">
+          <AssociationSet Name="FK__Warehouse__Id_ou__236943A5" Association="Self.FK__Warehouse__Id_ou__236943A5">
             <End Role="Company" EntitySet="Company" />
             <End Role="Warehouse_document" EntitySet="Warehouse_document" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_pa__5D95E53A" Association="Self.FK__Warehouse__Id_pa__5D95E53A">
+          <AssociationSet Name="FK__Warehouse__Id_pa__32AB8735" Association="Self.FK__Warehouse__Id_pa__32AB8735">
             <End Role="Pallet" EntitySet="Pallet" />
             <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_pr__5AB9788F" Association="Self.FK__Warehouse__Id_pr__5AB9788F">
+          <AssociationSet Name="FK__Warehouse__Id_pr__2FCF1A8A" Association="Self.FK__Warehouse__Id_pr__2FCF1A8A">
             <End Role="Product" EntitySet="Product" />
             <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_ty__4F47C5E3" Association="Self.FK__Warehouse__Id_ty__4F47C5E3">
+          <AssociationSet Name="FK__Warehouse__Id_ty__245D67DE" Association="Self.FK__Warehouse__Id_ty__245D67DE">
             <End Role="Document_type" EntitySet="Document_type" />
             <End Role="Warehouse_document" EntitySet="Warehouse_document" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_VA__5BAD9CC8" Association="Self.FK__Warehouse__Id_VA__5BAD9CC8">
+          <AssociationSet Name="FK__Warehouse__Id_VA__30C33EC3" Association="Self.FK__Warehouse__Id_VA__30C33EC3">
             <End Role="VAT_rate" EntitySet="VAT_rate" />
             <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_VA__5CA1C101" Association="Self.FK__Warehouse__Id_VA__5CA1C101">
+          <AssociationSet Name="FK__Warehouse__Id_VA__31B762FC" Association="Self.FK__Warehouse__Id_VA__31B762FC">
             <End Role="VAT_rate" EntitySet="VAT_rate" />
             <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_wo__503BEA1C" Association="Self.FK__Warehouse__Id_wo__503BEA1C">
+          <AssociationSet Name="FK__Warehouse__Id_wo__25518C17" Association="Self.FK__Warehouse__Id_wo__25518C17">
             <End Role="Worker" EntitySet="Worker" />
             <End Role="Warehouse_document" EntitySet="Warehouse_document" />
           </AssociationSet>
-          <AssociationSet Name="FK__Worker__Id_adres__498EEC8D" Association="Self.FK__Worker__Id_adres__498EEC8D">
+          <AssociationSet Name="FK__Worker__Id_adres__1EA48E88" Association="Self.FK__Worker__Id_adres__1EA48E88">
             <End Role="Adress" EntitySet="Adress" />
             <End Role="Worker" EntitySet="Worker" />
           </AssociationSet>
-          <AssociationSet Name="FK__Worker__Id_posit__4A8310C6" Association="Self.FK__Worker__Id_posit__4A8310C6">
+          <AssociationSet Name="FK__Worker__Id_posit__1F98B2C1" Association="Self.FK__Worker__Id_posit__1F98B2C1">
             <End Role="Position_title" EntitySet="Position_title" />
             <End Role="Worker" EntitySet="Worker" />
           </AssociationSet>
@@ -437,21 +437,21 @@
           <Key>
             <PropertyRef Name="Id_adress" />
           </Key>
-          <Property Name="Id_adress" Type="Int32" Nullable="false" />
+          <Property Name="Id_adress" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Street" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="House_number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Office_number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Postal_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Companies" Relationship="Self.FK__Company__Id_adre__45BE5BA9" FromRole="Adress" ToRole="Company" />
-          <NavigationProperty Name="Workers" Relationship="Self.FK__Worker__Id_adres__498EEC8D" FromRole="Adress" ToRole="Worker" />
+          <NavigationProperty Name="Companies" Relationship="Self.FK__Company__Id_adre__1AD3FDA4" FromRole="Adress" ToRole="Company" />
+          <NavigationProperty Name="Workers" Relationship="Self.FK__Worker__Id_adres__1EA48E88" FromRole="Adress" ToRole="Worker" />
         </EntityType>
         <EntityType Name="Company">
           <Key>
             <PropertyRef Name="Id_company" />
           </Key>
-          <Property Name="Id_company" Type="Int32" Nullable="false" />
+          <Property Name="Id_company" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Id_adress" Type="Int32" />
           <Property Name="Id_company_type" Type="Int32" />
@@ -462,107 +462,107 @@
           <Property Name="Contact_person" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Bank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Account_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Adress" Relationship="Self.FK__Company__Id_adre__45BE5BA9" FromRole="Company" ToRole="Adress" />
-          <NavigationProperty Name="Company_Type" Relationship="Self.FK__Company__Id_comp__46B27FE2" FromRole="Company" ToRole="Company_Type" />
-          <NavigationProperty Name="Warehouse_document" Relationship="Self.FK__Warehouse__Id_fo__4D5F7D71" FromRole="Company" ToRole="Warehouse_document" />
-          <NavigationProperty Name="Warehouse_document1" Relationship="Self.FK__Warehouse__Id_ou__4E53A1AA" FromRole="Company" ToRole="Warehouse_document" />
+          <NavigationProperty Name="Adress" Relationship="Self.FK__Company__Id_adre__1AD3FDA4" FromRole="Company" ToRole="Adress" />
+          <NavigationProperty Name="Company_Type" Relationship="Self.FK__Company__Id_comp__1BC821DD" FromRole="Company" ToRole="Company_Type" />
+          <NavigationProperty Name="Warehouse_document" Relationship="Self.FK__Warehouse__Id_fo__22751F6C" FromRole="Company" ToRole="Warehouse_document" />
+          <NavigationProperty Name="Warehouse_document1" Relationship="Self.FK__Warehouse__Id_ou__236943A5" FromRole="Company" ToRole="Warehouse_document" />
         </EntityType>
         <EntityType Name="Company_Type">
           <Key>
             <PropertyRef Name="Id_company_type" />
           </Key>
-          <Property Name="Id_company_type" Type="Int32" Nullable="false" />
+          <Property Name="Id_company_type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Company_type1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Companies" Relationship="Self.FK__Company__Id_comp__46B27FE2" FromRole="Company_Type" ToRole="Company" />
+          <NavigationProperty Name="Companies" Relationship="Self.FK__Company__Id_comp__1BC821DD" FromRole="Company_Type" ToRole="Company" />
         </EntityType>
         <EntityType Name="Dangerous_Goods">
           <Key>
             <PropertyRef Name="Id_ADR" />
           </Key>
-          <Property Name="Id_ADR" Type="Int32" Nullable="false" />
+          <Property Name="Id_ADR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ADR_number" Type="Int32" Nullable="false" />
-          <Property Name="ADR_name" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Products" Relationship="Self.FK__Product__Id_ADR__56E8E7AB" FromRole="Dangerous_Goods" ToRole="Product" />
+          <Property Name="ADR_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Self.FK__Product__Id_ADR__2BFE89A6" FromRole="Dangerous_Goods" ToRole="Product" />
         </EntityType>
         <EntityType Name="Document_type">
           <Key>
             <PropertyRef Name="Id_type" />
           </Key>
-          <Property Name="Id_type" Type="Int32" Nullable="false" />
+          <Property Name="Id_type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Warehouse_document" Relationship="Self.FK__Warehouse__Id_ty__4F47C5E3" FromRole="Document_type" ToRole="Warehouse_document" />
+          <NavigationProperty Name="Warehouse_document" Relationship="Self.FK__Warehouse__Id_ty__245D67DE" FromRole="Document_type" ToRole="Warehouse_document" />
         </EntityType>
         <EntityType Name="Pallet">
           <Key>
             <PropertyRef Name="Id_pallet" />
           </Key>
-          <Property Name="Id_pallet" Type="Int32" Nullable="false" />
+          <Property Name="Id_pallet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="QR_code" Type="Int32" Nullable="false" />
           <Property Name="Id_warehouse" Type="Int32" Nullable="false" />
           <Property Name="Id_type" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Pallet_type" Relationship="Self.FK__Pallet__Id_type__540C7B00" FromRole="Pallet" ToRole="Pallet_type" />
-          <NavigationProperty Name="Warehouse" Relationship="Self.FK__Pallet__Id_wareh__531856C7" FromRole="Pallet" ToRole="Warehouse" />
-          <NavigationProperty Name="Warehouse_Operation" Relationship="Self.FK__Warehouse__Id_pa__5D95E53A" FromRole="Pallet" ToRole="Warehouse_Operation" />
+          <NavigationProperty Name="Pallet_type" Relationship="Self.FK__Pallet__Id_type__29221CFB" FromRole="Pallet" ToRole="Pallet_type" />
+          <NavigationProperty Name="Warehouse" Relationship="Self.FK__Pallet__Id_wareh__282DF8C2" FromRole="Pallet" ToRole="Warehouse" />
+          <NavigationProperty Name="Warehouse_Operation" Relationship="Self.FK__Warehouse__Id_pa__32AB8735" FromRole="Pallet" ToRole="Warehouse_Operation" />
         </EntityType>
         <EntityType Name="Pallet_type">
           <Key>
             <PropertyRef Name="Id_type" />
           </Key>
-          <Property Name="Id_type" Type="Int32" Nullable="false" />
+          <Property Name="Id_type" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Width" Type="Int32" Nullable="false" />
           <Property Name="Lenght" Type="Int32" Nullable="false" />
           <Property Name="Height" Type="Int32" Nullable="false" />
           <Property Name="Weight" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Pallets" Relationship="Self.FK__Pallet__Id_type__540C7B00" FromRole="Pallet_type" ToRole="Pallet" />
+          <NavigationProperty Name="Pallets" Relationship="Self.FK__Pallet__Id_type__29221CFB" FromRole="Pallet_type" ToRole="Pallet" />
         </EntityType>
         <EntityType Name="Position_title">
           <Key>
             <PropertyRef Name="Id_position" />
           </Key>
-          <Property Name="Id_position" Type="Int32" Nullable="false" />
+          <Property Name="Id_position" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Position_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Workers" Relationship="Self.FK__Worker__Id_posit__4A8310C6" FromRole="Position_title" ToRole="Worker" />
+          <NavigationProperty Name="Workers" Relationship="Self.FK__Worker__Id_posit__1F98B2C1" FromRole="Position_title" ToRole="Worker" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="Id_product" />
           </Key>
-          <Property Name="Id_product" Type="Int32" Nullable="false" />
+          <Property Name="Id_product" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Product_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Product_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Minimum_stock" Type="Int32" />
           <Property Name="Product_desc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Id_ADR" Type="Int32" />
-          <NavigationProperty Name="Dangerous_Goods" Relationship="Self.FK__Product__Id_ADR__56E8E7AB" FromRole="Product" ToRole="Dangerous_Goods" />
-          <NavigationProperty Name="Warehouse_Operation" Relationship="Self.FK__Warehouse__Id_pr__5AB9788F" FromRole="Product" ToRole="Warehouse_Operation" />
+          <NavigationProperty Name="Dangerous_Goods" Relationship="Self.FK__Product__Id_ADR__2BFE89A6" FromRole="Product" ToRole="Dangerous_Goods" />
+          <NavigationProperty Name="Warehouse_Operation" Relationship="Self.FK__Warehouse__Id_pr__2FCF1A8A" FromRole="Product" ToRole="Warehouse_Operation" />
         </EntityType>
         <EntityType Name="VAT_rate">
           <Key>
             <PropertyRef Name="Id_VAT" />
           </Key>
-          <Property Name="Id_VAT" Type="Int32" Nullable="false" />
+          <Property Name="Id_VAT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="VAT_rate1" Type="Double" Nullable="false" />
           <Property Name="Comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Warehouse_Operation" Relationship="Self.FK__Warehouse__Id_VA__5BAD9CC8" FromRole="VAT_rate" ToRole="Warehouse_Operation" />
-          <NavigationProperty Name="Warehouse_Operation1" Relationship="Self.FK__Warehouse__Id_VA__5CA1C101" FromRole="VAT_rate" ToRole="Warehouse_Operation" />
+          <NavigationProperty Name="Warehouse_Operation" Relationship="Self.FK__Warehouse__Id_VA__30C33EC3" FromRole="VAT_rate" ToRole="Warehouse_Operation" />
+          <NavigationProperty Name="Warehouse_Operation1" Relationship="Self.FK__Warehouse__Id_VA__31B762FC" FromRole="VAT_rate" ToRole="Warehouse_Operation" />
         </EntityType>
         <EntityType Name="Warehouse">
           <Key>
             <PropertyRef Name="Id_warehouse" />
           </Key>
-          <Property Name="Id_warehouse" Type="Int32" Nullable="false" />
+          <Property Name="Id_warehouse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Shelf_number" Type="Int32" Nullable="false" />
           <Property Name="Rack_number" Type="Int32" Nullable="false" />
           <Property Name="Lane_number" Type="Int32" Nullable="false" />
           <Property Name="IsBusy" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Pallets" Relationship="Self.FK__Pallet__Id_wareh__531856C7" FromRole="Warehouse" ToRole="Pallet" />
+          <NavigationProperty Name="Pallets" Relationship="Self.FK__Pallet__Id_wareh__282DF8C2" FromRole="Warehouse" ToRole="Pallet" />
         </EntityType>
         <EntityType Name="Warehouse_document">
           <Key>
             <PropertyRef Name="Id_document" />
           </Key>
-          <Property Name="Id_document" Type="Int32" Nullable="false" />
+          <Property Name="Id_document" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Doc_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Id_foreign_company" Type="Int32" Nullable="false" />
           <Property Name="Id_our_company" Type="Int32" Nullable="false" />
@@ -571,17 +571,17 @@
           <Property Name="Issue_date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Operation_date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Comments" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Company" Relationship="Self.FK__Warehouse__Id_fo__4D5F7D71" FromRole="Warehouse_document" ToRole="Company" />
-          <NavigationProperty Name="Company1" Relationship="Self.FK__Warehouse__Id_ou__4E53A1AA" FromRole="Warehouse_document" ToRole="Company" />
-          <NavigationProperty Name="Document_type" Relationship="Self.FK__Warehouse__Id_ty__4F47C5E3" FromRole="Warehouse_document" ToRole="Document_type" />
-          <NavigationProperty Name="Warehouse_Operation" Relationship="Self.FK__Warehouse__Id_do__59C55456" FromRole="Warehouse_document" ToRole="Warehouse_Operation" />
-          <NavigationProperty Name="Worker" Relationship="Self.FK__Warehouse__Id_wo__503BEA1C" FromRole="Warehouse_document" ToRole="Worker" />
+          <NavigationProperty Name="Company" Relationship="Self.FK__Warehouse__Id_fo__22751F6C" FromRole="Warehouse_document" ToRole="Company" />
+          <NavigationProperty Name="Company1" Relationship="Self.FK__Warehouse__Id_ou__236943A5" FromRole="Warehouse_document" ToRole="Company" />
+          <NavigationProperty Name="Document_type" Relationship="Self.FK__Warehouse__Id_ty__245D67DE" FromRole="Warehouse_document" ToRole="Document_type" />
+          <NavigationProperty Name="Warehouse_Operation" Relationship="Self.FK__Warehouse__Id_do__2EDAF651" FromRole="Warehouse_document" ToRole="Warehouse_Operation" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK__Warehouse__Id_wo__25518C17" FromRole="Warehouse_document" ToRole="Worker" />
         </EntityType>
         <EntityType Name="Warehouse_Operation">
           <Key>
             <PropertyRef Name="Id_operation" />
           </Key>
-          <Property Name="Id_operation" Type="Int32" Nullable="false" />
+          <Property Name="Id_operation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_document" Type="Int32" Nullable="false" />
           <Property Name="Unit_weight" Type="Int32" />
           <Property Name="Id_product" Type="Int32" Nullable="false" />
@@ -591,17 +591,17 @@
           <Property Name="Id_VAT_service" Type="Int32" />
           <Property Name="Service_net_price" Type="Double" />
           <Property Name="Id_pallet" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Pallet" Relationship="Self.FK__Warehouse__Id_pa__5D95E53A" FromRole="Warehouse_Operation" ToRole="Pallet" />
-          <NavigationProperty Name="Product" Relationship="Self.FK__Warehouse__Id_pr__5AB9788F" FromRole="Warehouse_Operation" ToRole="Product" />
-          <NavigationProperty Name="VAT_rate" Relationship="Self.FK__Warehouse__Id_VA__5BAD9CC8" FromRole="Warehouse_Operation" ToRole="VAT_rate" />
-          <NavigationProperty Name="VAT_rate1" Relationship="Self.FK__Warehouse__Id_VA__5CA1C101" FromRole="Warehouse_Operation" ToRole="VAT_rate" />
-          <NavigationProperty Name="Warehouse_document" Relationship="Self.FK__Warehouse__Id_do__59C55456" FromRole="Warehouse_Operation" ToRole="Warehouse_document" />
+          <NavigationProperty Name="Pallet" Relationship="Self.FK__Warehouse__Id_pa__32AB8735" FromRole="Warehouse_Operation" ToRole="Pallet" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Warehouse__Id_pr__2FCF1A8A" FromRole="Warehouse_Operation" ToRole="Product" />
+          <NavigationProperty Name="VAT_rate" Relationship="Self.FK__Warehouse__Id_VA__30C33EC3" FromRole="Warehouse_Operation" ToRole="VAT_rate" />
+          <NavigationProperty Name="VAT_rate1" Relationship="Self.FK__Warehouse__Id_VA__31B762FC" FromRole="Warehouse_Operation" ToRole="VAT_rate" />
+          <NavigationProperty Name="Warehouse_document" Relationship="Self.FK__Warehouse__Id_do__2EDAF651" FromRole="Warehouse_Operation" ToRole="Warehouse_document" />
         </EntityType>
         <EntityType Name="Worker">
           <Key>
             <PropertyRef Name="Id_worker" />
           </Key>
-          <Property Name="Id_worker" Type="Int32" Nullable="false" />
+          <Property Name="Id_worker" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Id_adress" Type="Int32" />
           <Property Name="Id_position" Type="Int32" />
@@ -612,11 +612,11 @@
           <Property Name="Salt" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PESEL" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="Birth_date" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Adress" Relationship="Self.FK__Worker__Id_adres__498EEC8D" FromRole="Worker" ToRole="Adress" />
-          <NavigationProperty Name="Position_title" Relationship="Self.FK__Worker__Id_posit__4A8310C6" FromRole="Worker" ToRole="Position_title" />
-          <NavigationProperty Name="Warehouse_document" Relationship="Self.FK__Warehouse__Id_wo__503BEA1C" FromRole="Worker" ToRole="Warehouse_document" />
+          <NavigationProperty Name="Adress" Relationship="Self.FK__Worker__Id_adres__1EA48E88" FromRole="Worker" ToRole="Adress" />
+          <NavigationProperty Name="Position_title" Relationship="Self.FK__Worker__Id_posit__1F98B2C1" FromRole="Worker" ToRole="Position_title" />
+          <NavigationProperty Name="Warehouse_document" Relationship="Self.FK__Warehouse__Id_wo__25518C17" FromRole="Worker" ToRole="Warehouse_document" />
         </EntityType>
-        <Association Name="FK__Company__Id_adre__45BE5BA9">
+        <Association Name="FK__Company__Id_adre__1AD3FDA4">
           <End Role="Adress" Type="Self.Adress" Multiplicity="0..1" />
           <End Role="Company" Type="Self.Company" Multiplicity="*" />
           <ReferentialConstraint>
@@ -628,7 +628,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Worker__Id_adres__498EEC8D">
+        <Association Name="FK__Worker__Id_adres__1EA48E88">
           <End Role="Adress" Type="Self.Adress" Multiplicity="0..1" />
           <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
           <ReferentialConstraint>
@@ -640,7 +640,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Company__Id_comp__46B27FE2">
+        <Association Name="FK__Company__Id_comp__1BC821DD">
           <End Role="Company_Type" Type="Self.Company_Type" Multiplicity="0..1" />
           <End Role="Company" Type="Self.Company" Multiplicity="*" />
           <ReferentialConstraint>
@@ -652,7 +652,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_fo__4D5F7D71">
+        <Association Name="FK__Warehouse__Id_fo__22751F6C">
           <End Role="Company" Type="Self.Company" Multiplicity="1" />
           <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
           <ReferentialConstraint>
@@ -664,7 +664,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_ou__4E53A1AA">
+        <Association Name="FK__Warehouse__Id_ou__236943A5">
           <End Role="Company" Type="Self.Company" Multiplicity="1" />
           <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
           <ReferentialConstraint>
@@ -676,7 +676,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Id_ADR__56E8E7AB">
+        <Association Name="FK__Product__Id_ADR__2BFE89A6">
           <End Role="Dangerous_Goods" Type="Self.Dangerous_Goods" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
@@ -688,7 +688,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_ty__4F47C5E3">
+        <Association Name="FK__Warehouse__Id_ty__245D67DE">
           <End Role="Document_type" Type="Self.Document_type" Multiplicity="1" />
           <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
           <ReferentialConstraint>
@@ -700,7 +700,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Pallet__Id_type__540C7B00">
+        <Association Name="FK__Pallet__Id_type__29221CFB">
           <End Role="Pallet_type" Type="Self.Pallet_type" Multiplicity="1" />
           <End Role="Pallet" Type="Self.Pallet" Multiplicity="*" />
           <ReferentialConstraint>
@@ -712,7 +712,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Pallet__Id_wareh__531856C7">
+        <Association Name="FK__Pallet__Id_wareh__282DF8C2">
           <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
           <End Role="Pallet" Type="Self.Pallet" Multiplicity="*" />
           <ReferentialConstraint>
@@ -724,7 +724,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_pa__5D95E53A">
+        <Association Name="FK__Warehouse__Id_pa__32AB8735">
           <End Role="Pallet" Type="Self.Pallet" Multiplicity="1" />
           <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -736,7 +736,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Worker__Id_posit__4A8310C6">
+        <Association Name="FK__Worker__Id_posit__1F98B2C1">
           <End Role="Position_title" Type="Self.Position_title" Multiplicity="0..1" />
           <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
           <ReferentialConstraint>
@@ -748,7 +748,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_pr__5AB9788F">
+        <Association Name="FK__Warehouse__Id_pr__2FCF1A8A">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
           <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -760,7 +760,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_VA__5BAD9CC8">
+        <Association Name="FK__Warehouse__Id_VA__30C33EC3">
           <End Role="VAT_rate" Type="Self.VAT_rate" Multiplicity="0..1" />
           <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -772,7 +772,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_VA__5CA1C101">
+        <Association Name="FK__Warehouse__Id_VA__31B762FC">
           <End Role="VAT_rate" Type="Self.VAT_rate" Multiplicity="0..1" />
           <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -784,7 +784,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_do__59C55456">
+        <Association Name="FK__Warehouse__Id_do__2EDAF651">
           <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="1" />
           <End Role="Warehouse_Operation" Type="Self.Warehouse_Operation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -796,7 +796,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Warehouse__Id_wo__503BEA1C">
+        <Association Name="FK__Warehouse__Id_wo__25518C17">
           <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
           <End Role="Warehouse_document" Type="Self.Warehouse_document" Multiplicity="*" />
           <ReferentialConstraint>
@@ -823,67 +823,67 @@
           <EntitySet Name="Warehouse_document" EntityType="Self.Warehouse_document" />
           <EntitySet Name="Warehouse_Operation" EntityType="Self.Warehouse_Operation" />
           <EntitySet Name="Workers" EntityType="Self.Worker" />
-          <AssociationSet Name="FK__Company__Id_adre__45BE5BA9" Association="Self.FK__Company__Id_adre__45BE5BA9">
+          <AssociationSet Name="FK__Company__Id_adre__1AD3FDA4" Association="Self.FK__Company__Id_adre__1AD3FDA4">
             <End Role="Adress" EntitySet="Adresses" />
             <End Role="Company" EntitySet="Companies" />
           </AssociationSet>
-          <AssociationSet Name="FK__Worker__Id_adres__498EEC8D" Association="Self.FK__Worker__Id_adres__498EEC8D">
+          <AssociationSet Name="FK__Worker__Id_adres__1EA48E88" Association="Self.FK__Worker__Id_adres__1EA48E88">
             <End Role="Adress" EntitySet="Adresses" />
             <End Role="Worker" EntitySet="Workers" />
           </AssociationSet>
-          <AssociationSet Name="FK__Company__Id_comp__46B27FE2" Association="Self.FK__Company__Id_comp__46B27FE2">
+          <AssociationSet Name="FK__Company__Id_comp__1BC821DD" Association="Self.FK__Company__Id_comp__1BC821DD">
             <End Role="Company_Type" EntitySet="Company_Type" />
             <End Role="Company" EntitySet="Companies" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_fo__4D5F7D71" Association="Self.FK__Warehouse__Id_fo__4D5F7D71">
+          <AssociationSet Name="FK__Warehouse__Id_fo__22751F6C" Association="Self.FK__Warehouse__Id_fo__22751F6C">
             <End Role="Company" EntitySet="Companies" />
             <End Role="Warehouse_document" EntitySet="Warehouse_document" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_ou__4E53A1AA" Association="Self.FK__Warehouse__Id_ou__4E53A1AA">
+          <AssociationSet Name="FK__Warehouse__Id_ou__236943A5" Association="Self.FK__Warehouse__Id_ou__236943A5">
             <End Role="Company" EntitySet="Companies" />
             <End Role="Warehouse_document" EntitySet="Warehouse_document" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Id_ADR__56E8E7AB" Association="Self.FK__Product__Id_ADR__56E8E7AB">
+          <AssociationSet Name="FK__Product__Id_ADR__2BFE89A6" Association="Self.FK__Product__Id_ADR__2BFE89A6">
             <End Role="Dangerous_Goods" EntitySet="Dangerous_Goods" />
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_ty__4F47C5E3" Association="Self.FK__Warehouse__Id_ty__4F47C5E3">
+          <AssociationSet Name="FK__Warehouse__Id_ty__245D67DE" Association="Self.FK__Warehouse__Id_ty__245D67DE">
             <End Role="Document_type" EntitySet="Document_type" />
             <End Role="Warehouse_document" EntitySet="Warehouse_document" />
           </AssociationSet>
-          <AssociationSet Name="FK__Pallet__Id_type__540C7B00" Association="Self.FK__Pallet__Id_type__540C7B00">
+          <AssociationSet Name="FK__Pallet__Id_type__29221CFB" Association="Self.FK__Pallet__Id_type__29221CFB">
             <End Role="Pallet_type" EntitySet="Pallet_type" />
             <End Role="Pallet" EntitySet="Pallets" />
           </AssociationSet>
-          <AssociationSet Name="FK__Pallet__Id_wareh__531856C7" Association="Self.FK__Pallet__Id_wareh__531856C7">
+          <AssociationSet Name="FK__Pallet__Id_wareh__282DF8C2" Association="Self.FK__Pallet__Id_wareh__282DF8C2">
             <End Role="Warehouse" EntitySet="Warehouses" />
             <End Role="Pallet" EntitySet="Pallets" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_pa__5D95E53A" Association="Self.FK__Warehouse__Id_pa__5D95E53A">
+          <AssociationSet Name="FK__Warehouse__Id_pa__32AB8735" Association="Self.FK__Warehouse__Id_pa__32AB8735">
             <End Role="Pallet" EntitySet="Pallets" />
             <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Worker__Id_posit__4A8310C6" Association="Self.FK__Worker__Id_posit__4A8310C6">
+          <AssociationSet Name="FK__Worker__Id_posit__1F98B2C1" Association="Self.FK__Worker__Id_posit__1F98B2C1">
             <End Role="Position_title" EntitySet="Position_title" />
             <End Role="Worker" EntitySet="Workers" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_pr__5AB9788F" Association="Self.FK__Warehouse__Id_pr__5AB9788F">
+          <AssociationSet Name="FK__Warehouse__Id_pr__2FCF1A8A" Association="Self.FK__Warehouse__Id_pr__2FCF1A8A">
             <End Role="Product" EntitySet="Products" />
             <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_VA__5BAD9CC8" Association="Self.FK__Warehouse__Id_VA__5BAD9CC8">
+          <AssociationSet Name="FK__Warehouse__Id_VA__30C33EC3" Association="Self.FK__Warehouse__Id_VA__30C33EC3">
             <End Role="VAT_rate" EntitySet="VAT_rate" />
             <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_VA__5CA1C101" Association="Self.FK__Warehouse__Id_VA__5CA1C101">
+          <AssociationSet Name="FK__Warehouse__Id_VA__31B762FC" Association="Self.FK__Warehouse__Id_VA__31B762FC">
             <End Role="VAT_rate" EntitySet="VAT_rate" />
             <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_do__59C55456" Association="Self.FK__Warehouse__Id_do__59C55456">
+          <AssociationSet Name="FK__Warehouse__Id_do__2EDAF651" Association="Self.FK__Warehouse__Id_do__2EDAF651">
             <End Role="Warehouse_document" EntitySet="Warehouse_document" />
             <End Role="Warehouse_Operation" EntitySet="Warehouse_Operation" />
           </AssociationSet>
-          <AssociationSet Name="FK__Warehouse__Id_wo__503BEA1C" Association="Self.FK__Warehouse__Id_wo__503BEA1C">
+          <AssociationSet Name="FK__Warehouse__Id_wo__25518C17" Association="Self.FK__Warehouse__Id_wo__25518C17">
             <End Role="Worker" EntitySet="Workers" />
             <End Role="Warehouse_document" EntitySet="Warehouse_document" />
           </AssociationSet>

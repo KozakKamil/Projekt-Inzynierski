@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjektInz
+namespace ProjektInz.View
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy StateView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StateView : UserControl
     {
-        public MainWindow()
+        public StateView()
         {
             InitializeComponent();
         }

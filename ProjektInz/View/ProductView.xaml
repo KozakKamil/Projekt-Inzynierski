@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="ProjektInz.View.ProductView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProjektInz.View" 
+             xmlns:viewmodel="clr-namespace:ProjektInz.ViewModel" 
+             d:DataContext="{d:DesignInstance Type=viewmodel:ProductViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="0" ItemsSource="{Binding products}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id_product}"/>
+                <DataGridTextColumn Header="Nazwa produktu" Binding="{Binding Product_name}"/>
+                <DataGridTextColumn Header="Kod produktu" Binding="{Binding Product_code}"/>
+                <DataGridTextColumn Header="ADR" Binding="{Binding Dangerous_Goods.ADR_number}"/>
+                <DataGridTextColumn Header="Zapas minimalny" Binding="{Binding Minimum_stock}"/>
+                <DataGridTextColumn Header="Opis produktu" Binding="{Binding Product_desc}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,10" Orientation="Horizontal">
+            <Button Width="100" Content="Dodaj"/>
+            <Button Width="100" Content="Edytuj"/>
+            <Button Width="100" Content="Usuń"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
