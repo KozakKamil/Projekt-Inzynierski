@@ -81,7 +81,8 @@ namespace ProjektInz.ConnectionDB
             var context = new WarehousedbEntities();
             return context.Products.
                 Where(x => x.Id_product == Id).
-                Include(x => x.Dangerous_Goods).FirstOrDefault();
+                Include(x => x.Dangerous_Goods).
+                FirstOrDefault();
         }
 
         public async Task<Company> GetReceiverDetailsData(int Id)
@@ -108,7 +109,10 @@ namespace ProjektInz.ConnectionDB
         {
             var context = new WarehousedbEntities();
             return context.Workers.
-                Where(x => x.Id_worker == Id).FirstOrDefault();
+                Where(x => x.Id_worker == Id).
+                Include(x => x.Adress).
+                Include(x => x.Position_title).
+                FirstOrDefault();
         }
     }
 }

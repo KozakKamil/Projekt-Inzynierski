@@ -38,7 +38,7 @@
                 </Rectangle.Fill>
             </Rectangle>
         </Grid>
-        <StackPanel>
+        <StackPanel Grid.Row="1" Grid.RowSpan="4" HorizontalAlignment="Center">
             <Label Content="Imię"/>
             <Label Content="Nazwisko"/>
             <Label Content="Stanowisko"/>
@@ -53,8 +53,20 @@
             <Label Content="Kod pocztowy"/>
             <Label Content="Kraj"/>
         </StackPanel>
-        <StackPanel>
-            <Label Content="{Binding Worker}"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" HorizontalAlignment="Center">
+            <Label Content="{Binding Worker.Name}"/>
+            <Label Content="{Binding Worker.Surname}"/>
+            <Label Content="{Binding Worker.Position_title.Position_name}"/>
+            <Label Content="{Binding Worker.Birth_date}"/>
+            <Label Content="{Binding Worker.PESEL}"/>
+            <Label Content="{Binding Worker.Number}"/>
+            <Label Content="{Binding Worker.Email_adress}"/>
+            <Label Content="{Binding Worker.Adress.City}"/>
+            <Label Content="{Binding Worker.Adress.Street}"/>
+            <Label Content="{Binding Worker.Adress.House_number}"/>
+            <Label Content="{Binding Worker.Adress.Office_number}"/>
+            <Label Content="{Binding Worker.Adress.Postal_code}"/>
+            <Label Content="{Binding Worker.Adress.Country}"/>
         </StackPanel>
     </Grid>
 </Window>
