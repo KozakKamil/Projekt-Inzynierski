@@ -27,7 +27,7 @@ namespace ProjektInz.View
             InitializeComponent();
             viewModel = new ReceiverDetailsViewModel();
             DataContext = viewModel;
-            Loaded += async (s, e) => viewModel.GetReceiverDetailsData(receiver as Company);
+            Loaded += async (s, e) => await viewModel.GetReceiverDetailsData(receiver as Company);
         }
     }
 }
