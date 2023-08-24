@@ -94,14 +94,14 @@ namespace ProjektInz.ConnectionDB
                 FirstOrDefault();
         }
 
-        public async Task<List<Company>> GetSupplierDetailsData(int Id)
+        public async Task<Company> GetSupplierDetailsData(int Id)
         {
             var context = new WarehousedbEntities();
             return context.Companies.
                 Where(x => x.Company_Type.Company_type1 == CompanyType.Supplier).
                 Where(x => x.Id_company == Id).
                 Include(x => x.Adress).
-                ToList();
+                FirstOrDefault();
         }
 
         public async Task<Worker> GetWorkerDetailsData(int Id)
