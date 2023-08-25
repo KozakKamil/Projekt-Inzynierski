@@ -15,7 +15,7 @@ namespace ProjektInz.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public List<Company> CompanyList { get; set; }
+        public Company Company { get; set; }
 
         public ReceiverDetailsViewModel() 
         {
@@ -24,8 +24,8 @@ namespace ProjektInz.ViewModel
 
         public async Task GetReceiverDetailsData(Company company)
         {
-            CompanyList = await _connection.GetReceiverDetailsData(company.Id_company);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CompanyList)));
+            Company = company;
+            PropertyChanged?.Invoke(this,new PropertyChangedEventArgs(nameof(Company)));
         }
     }
 }

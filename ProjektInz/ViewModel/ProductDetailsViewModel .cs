@@ -15,14 +15,14 @@ namespace ProjektInz.ViewModel
 
     internal class ProductDetailsViewModel : INotifyPropertyChanged
     {
-        
+
         public Connection _connection;
         public event PropertyChangedEventHandler PropertyChanged;
-        public Product Products;
+        public Product Products { get; set; }
 
-        public  Action CloseAction { get; set; }
+        public Action CloseAction { get; set; }
 
-        public ProductDetailsViewModel() 
+        public ProductDetailsViewModel()
         {
             _connection = new Connection();
         }
@@ -31,13 +31,15 @@ namespace ProjektInz.ViewModel
         {
 
             Products = (await _connection.GetProductDetailsData(product.Id_product));
-            if(Products == null)
+            if (Products == null)
             {
                 MessageBox.Show("Brak danych do wyświetlenia", "Błąd");
-                CloseAction(); 
+                CloseAction();
             }
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Product)));
-            
+            else
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Products)));
+            }
         }
     }
 }

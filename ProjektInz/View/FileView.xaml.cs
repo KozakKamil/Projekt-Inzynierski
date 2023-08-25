@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjektInz.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,19 @@ namespace ProjektInz.View
     /// </summary>
     public partial class FileView : UserControl
     {
+        FileViewModel viewModel;
         public FileView()
         {
             InitializeComponent();
+            viewModel = new FileViewModel();
+            DataContext = viewModel;
+            Loaded += async (s, e) => await viewModel.GetFilesData();
+        }
+
+        private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var row = e.Source as DataGridRow;
+            new DocumentDetailsView(row.Item).ShowDialog();
         }
     }
 }

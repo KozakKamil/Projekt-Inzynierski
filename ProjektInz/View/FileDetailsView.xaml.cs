@@ -22,12 +22,12 @@ namespace ProjektInz.View
     public partial class FileDetailsView : Window
     {
         FileDetailsViewModel viewModel;
-        public FileDetailsView()
+        public FileDetailsView(object document)
         {
             InitializeComponent();
             viewModel = new FileDetailsViewModel();
             DataContext = viewModel;
-            Loaded += async (s, e) => await viewModel.GetFilesDetailsData();
+            Loaded += async (s, e) => await viewModel.GetFilesDetailsData(document as Warehouse_Operation);
         }
     }
 }

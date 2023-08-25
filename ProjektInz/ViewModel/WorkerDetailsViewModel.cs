@@ -14,11 +14,11 @@ namespace ProjektInz.ViewModel
     {
         public Connection _connection;
         public event PropertyChangedEventHandler PropertyChanged;
-        public Worker Worker;
+        public Worker Worker { get; set; }
 
         public Action CloseAction { get; set; }
 
-        public WorkerDetailsViewModel() 
+        public WorkerDetailsViewModel()
         {
             _connection = new Connection();
         }
@@ -26,12 +26,15 @@ namespace ProjektInz.ViewModel
         public async Task GetWorkerDetailsData(Worker worker)
         {
             Worker = (await _connection.GetWorkerDetailsData(worker.Id_worker));
-                if(Worker == null)
+            if (Worker == null)
             {
                 MessageBox.Show("Brak danych do wyświetlenia", "Błąd");
                 CloseAction();
             }
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Worker)));
+            else
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Worker)));
+            }
         }
     }
 }

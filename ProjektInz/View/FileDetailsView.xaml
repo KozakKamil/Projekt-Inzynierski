@@ -3,7 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjektInz.View" xmlns:viewmodel="clr-namespace:ProjektInz.ViewModel"
+
+        xmlns:local="clr-namespace:ProjektInz.View" 
+        xmlns:viewmodel="clr-namespace:ProjektInz.ViewModel" 
+        d:DataContext="{d:DesignInstance Type=viewmodel:FileDetailsViewModel}"
+        mc:Ignorable="d"
         Title="Dokument" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
@@ -38,5 +42,31 @@
             </Rectangle>
 
         </Grid>
+        <StackPanel Grid.Row="1" Grid.RowSpan="4" HorizontalAlignment="Center">
+            <Label Content="Nazwa porduktu"/>
+            <Label Content="Kod produktu"/>
+            <Label Content="Zapas minimalny"/>
+            <Label Content="Nazwa ADR"/>
+            <Label Content="Numer ADR"/>
+            <Label Content="Ilość"/>
+            <Label Content="Cena jednostkowa netto"/>
+            <Label Content="Cena usługi"/>
+            <Label Content="Stawka VAT"/>
+            <Label Content="Numer dokumentu"/>
+            <Label Content="Typ dokumentu"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" HorizontalAlignment="Center">
+            <Label Content="{Binding Warehouse_Operation.Product.Product_name}"/>
+            <Label Content="{Binding Warehouse_Operation.Product.Product_code}"/>
+            <Label Content="{Binding Warehouse_Operation.Product.Minimum_stock}"/>
+            <Label Content="{Binding Warehouse_Operation.Product.Dangerous_Goods.ADR_name}"/>
+            <Label Content="{Binding Warehouse_Operation.Product.Dangerous_Goods.ADR_number}"/>
+            <Label Content="{Binding Warehouse_Operation.Amount_product}"/>
+            <Label Content="{Binding Warehouse_Operation.Unit_net_price}"/>
+            <Label Content="{Binding Warehouse_Operation.Service_net_price}"/>
+            <Label Content="{Binding Warehouse_Operation.VAT_rate.VAT_rate1}"/>
+            <Label Content="{Binding Warehouse_Operation.Warehouse_document.Doc_number}"/>
+            <Label Content="{Binding Warehouse_Operation.Warehouse_document.Document_type.Type_name}"/>
+        </StackPanel>
     </Grid>
 </Window>

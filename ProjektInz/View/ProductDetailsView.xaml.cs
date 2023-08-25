@@ -28,10 +28,6 @@ namespace ProjektInz.View
             viewModel = new ProductDetailsViewModel();
             DataContext = viewModel;
             Loaded += async (s, e) => await viewModel.GetProductDetailsData(product as Product);
-            if(viewModel.CloseAction == null)
-            {
-                viewModel.CloseAction = new Action(this.Close);
-            }
         }
     }
 }

@@ -81,34 +81,52 @@ namespace ProjektInz.ConnectionDB
             var context = new WarehousedbEntities();
             return context.Products.
                 Where(x => x.Id_product == Id).
-                Include(x => x.Dangerous_Goods).FirstOrDefault();
+                Include(x => x.Dangerous_Goods).
+                FirstOrDefault();
         }
 
-        public async Task<List<Company>> GetReceiverDetailsData(int Id)
+        public async Task<Company> GetReceiverDetailsData(int Id)
         {
             var context = new WarehousedbEntities();
             return context.Companies.
                 Where(x => x.Company_Type.Company_type1 == CompanyType.Contractor).
                 Where(x => x.Id_company == Id).
                 Include(x => x.Adress).
-                ToList();
+                FirstOrDefault();
         }
 
-        public async Task<List<Company>> GetSupplierDetailsData(int Id)
+        public async Task<Company> GetSupplierDetailsData(int Id)
         {
             var context = new WarehousedbEntities();
             return context.Companies.
                 Where(x => x.Company_Type.Company_type1 == CompanyType.Supplier).
                 Where(x => x.Id_company == Id).
                 Include(x => x.Adress).
-                ToList();
+                FirstOrDefault();
         }
 
         public async Task<Worker> GetWorkerDetailsData(int Id)
         {
             var context = new WarehousedbEntities();
             return context.Workers.
-                Where(x => x.Id_worker == Id).FirstOrDefault();
+                Where(x => x.Id_worker == Id).
+                Include(x => x.Adress).
+                Include(x => x.Position_title).
+                FirstOrDefault();
+        }
+
+        public async Task<Warehouse_Operation> GetFilesDetailsData(int Id)
+        {
+            var context = new WarehousedbEntities();
+            return context.Warehouse_Operation.
+                Where(x => x.Id_operation == Id).
+                Include(x => x.Product).
+                Include(x => x.Product.Dangerous_Goods).
+                Include(x => x.VAT_rate).
+                Include(x => x.Warehouse_document).
+                Include(x => x.Warehouse_document.Document_type).
+                FirstOrDefault();
+
         }
     }
 }

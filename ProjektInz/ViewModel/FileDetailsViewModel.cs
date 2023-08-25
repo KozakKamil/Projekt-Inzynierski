@@ -15,14 +15,17 @@ namespace ProjektInz.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public Warehouse_Operation Warehouse_Operation { get; set; }
+
         public FileDetailsViewModel() 
         {
             _connection = new Connection();
         }
 
-        public async Task GetFilesDetailsData()
+        public async Task GetFilesDetailsData(Warehouse_Operation warehouse_Operation)
         {
-
+            Warehouse_Operation = warehouse_Operation;
+            PropertyChanged?.Invoke(this,new PropertyChangedEventArgs(nameof(Warehouse_Operation)));
         }
     }
 }

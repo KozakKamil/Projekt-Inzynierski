@@ -39,9 +39,37 @@
             </Rectangle>
 
         </Grid>
-        <StackPanel></StackPanel>
-        <StackPanel>
-            <Label Content="{Binding Supplier}"/>
+        <StackPanel Grid.Row="1" Grid.RowSpan="4" HorizontalAlignment="Center">
+            <Label Content="Nazwa: "/>
+            <Label Content="Numer tel.: "/>
+            <Label Content="Adres email:"/>
+            <Label Content="NIP:"/>
+            <Label Content="REGON: "/>
+            <Label Content="Osoba kontaktowa"/>
+            <Label Content="Bank:"/>
+            <Label Content="Numer konta"/>
+            <Label Content="Miasto:"/>
+            <Label Content="Ulica:"/>
+            <Label Content="Numer domu:"/>
+            <Label Content="Numer lokalu:"/>
+            <Label Content="Kod pocztowy"/>
+            <Label Content="Kraj:"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" HorizontalAlignment="Center">
+            <Label Content="{Binding Company.Name}"/>
+            <Label Content="{Binding Company.Number}"/>
+            <Label Content="{Binding Company.Email_adress}"/>
+            <Label Content="{Binding Company.NIP}"/>
+            <Label Content="{Binding Company.REGON}"/>
+            <Label Content="{Binding Company.Contact_person}"/>
+            <Label Content="{Binding Company.Bank}"/>
+            <Label Content="{Binding Company.Account_number}"/>
+            <Label Content="{Binding Company.Adress.City}"/>
+            <Label Content="{Binding Company.Adress.Street}"/>
+            <Label Content="{Binding Company.Adress.House_number}"/>
+            <Label Content="{Binding Company.Adress.Office_number}"/>
+            <Label Content="{Binding Company.Adress.Postal_code}"/>
+            <Label Content="{Binding Company.Adress.Country}"/>
         </StackPanel>
     </Grid>
 </Window>
