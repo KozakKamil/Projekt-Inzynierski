@@ -1,0 +1,72 @@
+﻿<Window x:Class="ProjektInz.View.AddingView.AddDocumentView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektInz.View.AddingView"
+        mc:Ignorable="d"
+        Title="AddDocumentView" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="{StaticResource SecondaryBackgroundColor}"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="1" HorizontalAlignment="Center" Foreground="{StaticResource AddTextColor}"/>
+            <Rectangle Grid.Row="0">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="{StaticResource TopColor}"/>
+                </Rectangle.Fill>
+            </Rectangle>
+
+        </Grid>
+        <StackPanel Grid.Row="1" Grid.RowSpan="4" HorizontalAlignment="Center">
+            <Label Content="Nazwa: "/>
+            <Label Content="Numer tel.: "/>
+            <Label Content="Adres email:"/>
+            <Label Content="NIP:"/>
+            <Label Content="REGON: "/>
+            <Label Content="Osoba kontaktowa"/>
+            <Label Content="Bank:"/>
+            <Label Content="Numer konta"/>
+            <Label Content="Miasto:"/>
+            <Label Content="Ulica:"/>
+            <Label Content="Numer domu:"/>
+            <Label Content="Numer lokalu:"/>
+            <Label Content="Kod pocztowy"/>
+            <Label Content="Kraj:"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" HorizontalAlignment="Center">
+            <TextBlock/>
+            <TextBlock/>
+            <TextBlock/>
+            <TextBlock/>
+            <TextBlock/>
+            <TextBlock/>
+            <TextBlock/>
+            <TextBlock/>
+            <TextBlock/>
+            <TextBlock/>
+            <TextBlock/>
+        </StackPanel>
+    </Grid>
+</Window>
