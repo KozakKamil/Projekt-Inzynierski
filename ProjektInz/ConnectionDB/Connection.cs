@@ -119,6 +119,12 @@ namespace ProjektInz.ConnectionDB
         {
             var context = new WarehousedbEntities();
             return context.Warehouse_Operation.
+                Where(x => x.Id_operation == Id).
+                Include(x => x.Product).
+                Include(x => x.Product.Dangerous_Goods).
+                Include(x => x.VAT_rate).
+                Include(x => x.Warehouse_document).
+                Include(x => x.Warehouse_document.Document_type).
                 FirstOrDefault();
 
         }
