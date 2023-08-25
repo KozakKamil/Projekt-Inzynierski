@@ -114,5 +114,13 @@ namespace ProjektInz.ConnectionDB
                 Include(x => x.Position_title).
                 FirstOrDefault();
         }
+
+        public async Task<Warehouse_Operation> GetFilesDetailsData(int Id)
+        {
+            var context = new WarehousedbEntities();
+            return context.Warehouse_Operation.
+                FirstOrDefault();
+
+        }
     }
 }
