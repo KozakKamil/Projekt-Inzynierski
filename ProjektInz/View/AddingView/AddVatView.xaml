@@ -42,21 +42,12 @@
 
         </Grid>
         <StackPanel Grid.Row="1" Grid.RowSpan="4" HorizontalAlignment="Center">
-            <Label Content="Numer ADR: "/>
-            <Label Content="Nazwa ADR: "/>
+            <Label Content="Stawka VAT "/>
+            <Label Content="Komentarz "/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" HorizontalAlignment="Center">
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
+        <StackPanel  Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" HorizontalAlignment="Center">
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Vat.VAT_rate1}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Vat.Comments}"/>
         </StackPanel>
     </Grid>
 </Window>

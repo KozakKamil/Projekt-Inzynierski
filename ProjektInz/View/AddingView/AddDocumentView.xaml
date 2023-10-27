@@ -54,17 +54,15 @@
             <Label Content="Uwagi"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" HorizontalAlignment="Center">
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Warehouse_document.Doc_number}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Warehouse_document.Company}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Warehouse_document.Document_type}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Warehouse_document.Worker.Surname}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Warehouse_document.Issue_date}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Warehouse_document.Operation_date}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Product.Product_code}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Amount_product}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Warehouse_document.Comments}"/>
         </StackPanel>
     </Grid>
 </Window>

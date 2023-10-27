@@ -51,11 +51,13 @@
             <Label Content="Adres e-mail"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" HorizontalAlignment="Center">
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Worker.Name}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Worker.Surname}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Worker.Position_title}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Worker.Birth_date}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Worker.PESEL}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Worker.Number}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Worker.Email_adress}"/>
         </StackPanel>
     </Grid>
 </Window>

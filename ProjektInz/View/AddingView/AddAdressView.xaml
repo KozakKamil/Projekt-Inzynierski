@@ -42,14 +42,6 @@
 
         </Grid>
         <StackPanel Grid.Row="1" Grid.RowSpan="4" HorizontalAlignment="Center">
-            <Label Content="Nazwa: "/>
-            <Label Content="Numer tel.: "/>
-            <Label Content="Adres email:"/>
-            <Label Content="NIP:"/>
-            <Label Content="REGON: "/>
-            <Label Content="Osoba kontaktowa"/>
-            <Label Content="Bank:"/>
-            <Label Content="Numer konta"/>
             <Label Content="Miasto:"/>
             <Label Content="Ulica:"/>
             <Label Content="Numer domu:"/>
@@ -58,17 +50,12 @@
             <Label Content="Kraj:"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" HorizontalAlignment="Center">
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
-            <TextBlock/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Adress.City}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Adress.Street}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Adress.House_number}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Adress.Office_number}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Adress.Postal_code}"/>
+            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Adress.Country}"/>
         </StackPanel>
     </Grid>
 </Window>
