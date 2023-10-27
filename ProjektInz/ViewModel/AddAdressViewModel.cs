@@ -1,4 +1,5 @@
 ﻿using ProjektInz.ConnectionDB;
+using ProjektInz.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,29 @@ namespace ProjektInz.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private Adress adress = new Adress();
+
         public AddAdressViewModel()
         {
             _connection = new Connection();
+        }
+
+        public Adress Adress
+        {
+            get
+            {
+                return adress;
+            }
+            set
+            {
+                adress = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Adress)));
+            }
+        }
+
+        public async void AddAdress()
+        {
+            await _connection.AddAdress(Adress);
         }
     }
 }
