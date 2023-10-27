@@ -15,14 +15,14 @@ namespace ProjektInz.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private Product _product = new Product();
+        private Product product = new Product();
 
         public AddProductViewModel()
         {
             _connection = new Connection(); 
         }
 
-        public Product product
+        public Product Product
         {
             get
             {
@@ -31,7 +31,7 @@ namespace ProjektInz.ViewModel
             set
             {
                 product = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(product)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Product)));
             }
         }
 
