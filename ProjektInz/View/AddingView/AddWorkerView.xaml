@@ -58,6 +58,8 @@
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Worker.PESEL}"/>
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Worker.Number}"/>
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Worker.Email_adress}"/>
+
+            <Button Content="Dodaj pracownika" Command="{Binding AddWorkerCommand}" />
         </StackPanel>
     </Grid>
 </Window>

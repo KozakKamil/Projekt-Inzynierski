@@ -60,6 +60,8 @@
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Company.Contact_person}"/>
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Company.Bank}"/>
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Company.Account_number}"/>
+
+            <Button Content="Dodaj przedsiębiorstwo" Command="{Binding AddCompanyCommand}" />
         </StackPanel>
     </Grid>
 </Window>

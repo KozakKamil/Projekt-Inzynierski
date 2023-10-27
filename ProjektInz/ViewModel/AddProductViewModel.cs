@@ -1,4 +1,5 @@
-﻿using ProjektInz.ConnectionDB;
+﻿using CommunityToolkit.Mvvm.Input;
+using ProjektInz.ConnectionDB;
 using ProjektInz.Models;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ProjektInz.ViewModel
 {
@@ -14,12 +16,13 @@ namespace ProjektInz.ViewModel
         public Connection _connection;
 
         public event PropertyChangedEventHandler PropertyChanged;
-
+        public ICommand AddProductCommand { get; private set; }
         private Product product = new Product();
 
         public AddProductViewModel()
         {
-            _connection = new Connection(); 
+            _connection = new Connection();
+            AddProductCommand = new RelayCommand(AddProduct);
         }
 
         public Product Product

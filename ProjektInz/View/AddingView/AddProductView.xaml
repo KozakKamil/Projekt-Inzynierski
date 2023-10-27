@@ -54,6 +54,8 @@
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Product.Minimum_stock}"/>
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Product.Dangerous_Goods.ADR_number}"/>
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Product.Product_desc}"/>
+
+            <Button Content="Dodaj produkt" Command="{Binding AddProductCommand}" />
         </StackPanel>
     </Grid>
 </Window>

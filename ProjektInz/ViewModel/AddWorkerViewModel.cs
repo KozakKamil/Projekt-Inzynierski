@@ -1,4 +1,5 @@
-﻿using ProjektInz.ConnectionDB;
+﻿using CommunityToolkit.Mvvm.Input;
+using ProjektInz.ConnectionDB;
 using ProjektInz.Models;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ProjektInz.ViewModel
 {
@@ -14,12 +16,13 @@ namespace ProjektInz.ViewModel
         public Connection _connection;
 
         public event PropertyChangedEventHandler PropertyChanged;
-
+        public ICommand AddWorkerCommand { get; private set; }
         private Worker worker = new Worker();
 
         public AddWorkerViewModel()
         {
             _connection = new Connection();
+            AddWorkerCommand = new RelayCommand(AddWorker);
         }
 
 

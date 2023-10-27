@@ -1,4 +1,5 @@
-﻿using ProjektInz.ConnectionDB;
+﻿using CommunityToolkit.Mvvm.Input;
+using ProjektInz.ConnectionDB;
 using ProjektInz.Models;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ProjektInz.ViewModel
 {
@@ -14,12 +16,13 @@ namespace ProjektInz.ViewModel
         public Connection _connection;
 
         public event PropertyChangedEventHandler PropertyChanged;
-
+        public ICommand AddVatCommand { get; private set; }
         private VAT_rate _vat = new VAT_rate();
 
         public AddVatViewModel()
         {
             _connection = new Connection();
+            AddVatCommand = new RelayCommand(AddVat);
         }
 
         public VAT_rate Vat

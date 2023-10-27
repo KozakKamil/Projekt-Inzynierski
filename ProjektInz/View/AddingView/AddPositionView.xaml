@@ -46,6 +46,8 @@
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" HorizontalAlignment="Center">
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Position.Position_name}"/>
+
+            <Button Content="Dodaj pozycje" Command="{Binding AddPositionCommand}" />
         </StackPanel>
     </Grid>
 </Window>

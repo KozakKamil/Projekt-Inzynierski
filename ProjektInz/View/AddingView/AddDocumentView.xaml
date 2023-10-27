@@ -63,6 +63,8 @@
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Product.Product_code}"/>
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Amount_product}"/>
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Warehouse_document.Comments}"/>
+
+            <Button Content="Dodaj dokument" Command="{Binding AddDocumentCommand}" />
         </StackPanel>
     </Grid>
 </Window>
