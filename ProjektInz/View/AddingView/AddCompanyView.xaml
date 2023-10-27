@@ -48,12 +48,6 @@
             <Label Content="Osoba kontaktowa"/>
             <Label Content="Bank:"/>
             <Label Content="Numer konta"/>
-            <Label Content="Miasto:"/>
-            <Label Content="Ulica:"/>
-            <Label Content="Numer domu:"/>
-            <Label Content="Numer lokalu:"/>
-            <Label Content="Kod pocztowy"/>
-            <Label Content="Kraj:"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" HorizontalAlignment="Center">
             <TextBlock/>
