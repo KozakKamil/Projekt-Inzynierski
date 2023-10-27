@@ -175,5 +175,32 @@ namespace ProjektInz.ConnectionDB
             context.Adresses.Add(adress);
             await context.SaveChangesAsync();
         }
+
+        public async Task DeleteWorker(Worker worker)
+        {
+            var context = new WarehousedbEntities();
+            context.Workers.Remove(worker);
+            await context.SaveChangesAsync();
+        }
+        public async Task DeleteCompany(Company company)
+        {
+            var context = new WarehousedbEntities();
+            context.Companies.Remove(company);
+            await context.SaveChangesAsync();
+        }
+
+        public async Task DeleteProduct(Product product)
+        {
+            var context = new WarehousedbEntities();
+            context.Products.Remove(product);
+            await context.SaveChangesAsync();
+        }   
+
+        public async Task DeleteDocuments(Warehouse_Operation warehouse_Operation)
+        {
+            var context = new WarehousedbEntities();
+            context.Warehouse_Operation.Remove(warehouse_Operation);
+            await context.SaveChangesAsync();
+        }
     }
 }
