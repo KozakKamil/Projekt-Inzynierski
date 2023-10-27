@@ -9,36 +9,35 @@ using System.Threading.Tasks;
 
 namespace ProjektInz.ViewModel
 {
-    internal class AddWorkerViewModel
+    internal class AddPositionViewModel
     {
         public Connection _connection;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private Worker worker = new Worker();
+        private Position_title position = new Position_title();
 
-        public AddWorkerViewModel()
+        public AddPositionViewModel()
         {
             _connection = new Connection();
         }
 
-
-        public Worker Worker
+        public Position_title Position
         {
             get
             {
-                return worker;
+                return position;
             }
             set
             {
-                worker = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Worker)));
-            }   
+                position = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Position)));
+            }
         }
 
-        public async void AddWorker()
+        public async void AddPosition()
         {
-           await _connection.AddWorker(Worker);
+            await _connection.AddPosition(Position);
         }
     }
 }

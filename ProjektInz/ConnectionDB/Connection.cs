@@ -127,12 +127,53 @@ namespace ProjektInz.ConnectionDB
 
         }
 
-        //Add data from AddWorkerView to database
-        public async Task AddWorkerData(Worker worker)
+        //Add data to database
+        public async Task AddWorker(Worker worker)
         {
             var context = new WarehousedbEntities();
             context.Workers.Add(worker);
             await context.SaveChangesAsync();
-        }   
+        }
+
+        public async Task AddVat(VAT_rate vat)
+        {
+            var context = new WarehousedbEntities();
+            context.VAT_rate.Add(vat);
+            await context.SaveChangesAsync();
+        }
+        public async Task AddProduct(Product product)
+        {
+            var context = new WarehousedbEntities();
+            context.Products.Add(product);
+            await context.SaveChangesAsync();
+        }
+
+        public async Task AddPosition(Position_title position)
+        {
+            var context = new WarehousedbEntities();
+            context.Position_title.Add(position);
+            await context.SaveChangesAsync();
+        }
+
+        public async Task AddDocument(Warehouse_Operation warehouse_Operation)
+        {
+            var context = new WarehousedbEntities();
+            context.Warehouse_Operation.Add(warehouse_Operation);
+            await context.SaveChangesAsync();
+        }
+
+        public async Task AddCompany(Company company)
+        {
+            var context = new WarehousedbEntities();
+            context.Companies.Add(company);
+            await context.SaveChangesAsync();
+        }
+
+        public async Task AddAdress(Adress adress)
+        {
+            var context = new WarehousedbEntities();
+            context.Adresses.Add(adress);
+            await context.SaveChangesAsync();
+        }
     }
 }

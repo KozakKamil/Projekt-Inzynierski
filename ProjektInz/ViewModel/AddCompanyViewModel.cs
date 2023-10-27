@@ -9,36 +9,34 @@ using System.Threading.Tasks;
 
 namespace ProjektInz.ViewModel
 {
-    internal class AddWorkerViewModel
+    internal class AddCompanyViewModel
     {
         public Connection _connection;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private Worker worker = new Worker();
-
-        public AddWorkerViewModel()
+        private Company company = new Company();
+        public AddCompanyViewModel()
         {
             _connection = new Connection();
-        }
+        }   
 
-
-        public Worker Worker
+        public Company Company
         {
             get
             {
-                return worker;
+                return company;
             }
             set
             {
-                worker = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Worker)));
-            }   
+                company = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Company)));
+            }
         }
 
-        public async void AddWorker()
+        public async void AddCompany()
         {
-           await _connection.AddWorker(Worker);
+            await _connection.AddCompany(Company);
         }
     }
 }

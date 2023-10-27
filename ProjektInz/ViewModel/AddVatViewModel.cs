@@ -9,36 +9,35 @@ using System.Threading.Tasks;
 
 namespace ProjektInz.ViewModel
 {
-    internal class AddWorkerViewModel
+    internal class AddVatViewModel
     {
         public Connection _connection;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private Worker worker = new Worker();
+        private VAT_rate _vat = new VAT_rate();
 
-        public AddWorkerViewModel()
+        public AddVatViewModel()
         {
             _connection = new Connection();
         }
 
-
-        public Worker Worker
+        public VAT_rate Vat
         {
             get
             {
-                return worker;
+                return _vat;
             }
             set
             {
-                worker = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Worker)));
-            }   
+                _vat = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Vat)));
+            }
         }
 
-        public async void AddWorker()
+        public async void AddVat()
         {
-           await _connection.AddWorker(Worker);
+            await _connection.AddVat(Vat);
         }
     }
 }

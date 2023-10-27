@@ -167,6 +167,12 @@
     <Compile Include="Models\Worker.cs">
       <DependentUpon>Warehouse.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AddAdressViewModel.cs" />
+    <Compile Include="ViewModel\AddCompanyViewModel.cs" />
+    <Compile Include="ViewModel\AddDocumentViewModel.cs" />
+    <Compile Include="ViewModel\AddPositionViewModel.cs" />
+    <Compile Include="ViewModel\AddProductViewModel.cs" />
+    <Compile Include="ViewModel\AddVatViewModel.cs" />
     <Compile Include="ViewModel\AddWorkerViewModel.cs" />
     <Compile Include="ViewModel\FileDetailsViewModel.cs" />
     <Compile Include="ViewModel\WorkerDetailsViewModel.cs" />
