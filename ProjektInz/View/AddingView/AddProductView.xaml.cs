@@ -17,9 +17,9 @@ namespace ProjektInz.View.AddingView
     /// <summary>
     /// Logika interakcji dla klasy AddDocumentView.xaml
     /// </summary>
-    public partial class AddDocumentView : Window
+    public partial class AddProductView : Window
     {
-        public AddDocumentView()
+        public AddProductView()
         {
             InitializeComponent();
         }

@@ -1,9 +1,7 @@
 ﻿using ProjektInz.Models;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjektInz.ConnectionDB
@@ -61,9 +59,9 @@ namespace ProjektInz.ConnectionDB
         {
             var context = new WarehousedbEntities();
             return context.Warehouse_Operation.
-                Include(x=>x.Product).
-                Include(x=>x.Warehouse_document.Document_type).
-                Include(x=>x.Product.Dangerous_Goods).
+                Include(x => x.Product).
+                Include(x => x.Warehouse_document.Document_type).
+                Include(x => x.Product.Dangerous_Goods).
                 ToList();
         }
 
@@ -71,7 +69,7 @@ namespace ProjektInz.ConnectionDB
         {
             var context = new WarehousedbEntities();
             return context.Warehouse_Operation.
-                Where(x=>x.Id_document == Id).
+                Where(x => x.Id_document == Id).
                 Include(x => x.Product).
                 ToList();
         }
@@ -128,5 +126,13 @@ namespace ProjektInz.ConnectionDB
                 FirstOrDefault();
 
         }
+
+        //Add data from AddWorkerView to database
+        public async Task AddWorkerData(Worker worker)
+        {
+            var context = new WarehousedbEntities();
+            context.Workers.Add(worker);
+            await context.SaveChangesAsync();
+        }   
     }
 }

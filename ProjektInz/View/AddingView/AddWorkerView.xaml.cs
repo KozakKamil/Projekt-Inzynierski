@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace ProjektInz.View.AddingView
 {
     /// <summary>
-    /// Logika interakcji dla klasy AddDocumentView.xaml
+    /// Logika interakcji dla klasy AddWorkerView.xaml
     /// </summary>
-    public partial class AddDocumentView : Window
+    public partial class AddWorkerView : Window
     {
-        public AddDocumentView()
+        public AddWorkerView()
         {
             InitializeComponent();
         }
