@@ -34,9 +34,9 @@ namespace ProjektInz.ViewModel
             }
         }
 
-        public async void AddOperation()
+        public async void AddDocument()
         {
-            await _connection.AddOperation(Operation);
+            await _connection.AddDocument(Operation);
         }
     }
 }
