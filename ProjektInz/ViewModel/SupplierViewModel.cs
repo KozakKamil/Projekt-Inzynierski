@@ -13,7 +13,6 @@ namespace ProjektInz.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public Connection _connection;
-
         public List<Company> supplierCompany { get; set; }
 
         public SupplierViewModel() { _connection = new Connection(); }

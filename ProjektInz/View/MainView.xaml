@@ -57,13 +57,20 @@
                 </Rectangle.Fill>
             </Rectangle>
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btnFile" Content="Kartoteka" Width="100" Click="btnFile_Click"/>
-                <Button x:Name="btnDocuments" Content="Dokumenty" Width="100" Click="btnDocuments_Click"/>
-                <Button x:Name="btnReceiver" Content="Odbiorca" Width="100" Click="btnReceiver_Click"/>
-                <Button x:Name="btnSupplier" Content="Dostawca" Width="100" Click="btnSupplier_Click"/>
-                <Button x:Name="btnWorker" Content="Pracownik" Width="100" Click="btnWorker_Click"/>
-                <Button x:Name="btnProduct" Content="Produkt" Width="100" Click="btnProduct_Click"/>
-                <Button x:Name="btnState" Content="Stan" Width="100" Click="btnState_Click"/>
+                <Button x:Name="btnFile" Content="Kartoteka" Width="100" Click="btnFile_Click"
+                        Style="{StaticResource MenuButton}"/>
+                <Button x:Name="btnDocuments" Content="Dokumenty" Width="100" Click="btnDocuments_Click"
+                        Style="{StaticResource MenuButton}"/>
+                <Button x:Name="btnReceiver" Content="Odbiorca" Width="100" Click="btnReceiver_Click"
+                        Style="{StaticResource MenuButton}"/>
+                <Button x:Name="btnSupplier" Content="Dostawca" Width="100" Click="btnSupplier_Click"
+                        Style="{StaticResource MenuButton}"/>
+                <Button x:Name="btnWorker" Content="Pracownik" Width="100" Click="btnWorker_Click"
+                        Style="{StaticResource MenuButton}"/>
+                <Button x:Name="btnProduct" Content="Produkt" Width="100" Click="btnProduct_Click"
+                        Style="{StaticResource MenuButton}"/>
+                <Button x:Name="btnState" Content="Stan" Width="100" Click="btnState_Click"
+                        Style="{StaticResource MenuButton}"/>
             </StackPanel>
 
         </Grid>

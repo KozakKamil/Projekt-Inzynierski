@@ -23,8 +23,7 @@ namespace ProjektInz.ViewModel
 
         public WorkerViewModel() 
         { 
-            _connection = new Connection(); 
-            DeleteWorkerCommand = new RelayCommand(DeleteWorker);
+            _connection = new Connection();
         }
 
         public Worker Worker
@@ -37,16 +36,6 @@ namespace ProjektInz.ViewModel
         {
             Workers = await _connection.GetWorkerData();
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Workers)));
-        }
-
-        private void DeleteWorker()
-        {
-            if (worker != null )
-            {
-
-                _connection.DeleteWorker(worker);
-                Workers.Remove(worker);
-            }
         }
     }
 }

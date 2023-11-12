@@ -110,6 +110,7 @@
     </ApplicationDefinition>
     <Compile Include="CompanyType.cs" />
     <Compile Include="ConnectionDB\Connection.cs" />
+    <Compile Include="CustomModels\Line.cs" />
     <Compile Include="Models\Adress.cs">
       <DependentUpon>Warehouse.tt</DependentUpon>
     </Compile>
@@ -174,6 +175,7 @@
     <Compile Include="ViewModel\AddProductViewModel.cs" />
     <Compile Include="ViewModel\AddVatViewModel.cs" />
     <Compile Include="ViewModel\AddWorkerViewModel.cs" />
+    <Compile Include="ViewModel\ConfigureWareHouseViewModel.cs" />
     <Compile Include="ViewModel\FileDetailsViewModel.cs" />
     <Compile Include="ViewModel\WorkerDetailsViewModel.cs" />
     <Compile Include="ViewModel\SupplierDetailsViewModel.cs" />
@@ -194,9 +196,6 @@
     </Compile>
     <Compile Include="View\AddingView\AddPositionView.xaml.cs">
       <DependentUpon>AddPositionView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\AddingView\AddAdressView.xaml.cs">
-      <DependentUpon>AddAdressView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\AddingView\AddWorkerView.xaml.cs">
       <DependentUpon>AddWorkerView.xaml</DependentUpon>
@@ -248,10 +247,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\AddingView\AddPositionView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\AddingView\AddAdressView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -407,7 +402,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="View\EditView\" />
+    <Folder Include="View\DetailsView\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -40,11 +40,12 @@
                 </Rectangle.Fill>
             </Rectangle>
 
+         <!--Dodać addres-->
         </Grid>
         <StackPanel Grid.Row="1" Grid.RowSpan="4" HorizontalAlignment="Center">
             <Label Content="Imię"/>
             <Label Content="Nazwisko"/>
-            <Label Content="Stanowisko"/>
+            <Label Content="Stanowisko"/> <!--Combobox-->
             <Label Content="Data urodzenia"/>
             <Label Content="PESEL"/>
             <Label Content="Nr. telefonu"/>
@@ -58,7 +59,6 @@
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Worker.PESEL}"/>
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Worker.Number}"/>
             <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Worker.Email_adress}"/>
-
             <Button Content="Dodaj pracownika" Command="{Binding AddWorkerCommand}" />
         </StackPanel>
     </Grid>

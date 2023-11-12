@@ -7,27 +7,21 @@
         xmlns:viewmodel="clr-namespace:ProjektInz.ViewModel"
         d:DataContext="{d:DesignInstance Type=viewmodel:AddDocumentViewModel}"
         mc:Ignorable="d"
-        Title="AddDocumentView" Height="450" Width="800">
+        x:Name="window"
+        Title="AddDocumentView" Height="450" Width="800"
+        WindowStyle="SingleBorderWindow">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
             <Rectangle.Fill>
                 <SolidColorBrush Color="{StaticResource SecondaryBackgroundColor}"/>
             </Rectangle.Fill>
         </Rectangle>
 
-        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" >
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -39,32 +33,215 @@
                     <SolidColorBrush Color="{StaticResource TopColor}"/>
                 </Rectangle.Fill>
             </Rectangle>
-
         </Grid>
-        <StackPanel Grid.Row="1" Grid.RowSpan="4" HorizontalAlignment="Center">
-            <Label Content="Numer"/>
-            <Label Content="Przedsiębiorstwo"/>
-            <Label Content="Typ dokumentu"/>
-            <Label Content="Wystawiający"/>
-            <Label Content="Data wystawienia"/>
-            <Label Content="Data operacji"/>
-            <Label Content="Produkt"/>
-            <Label Content="Kod produktu"/>
-            <Label Content="Ilość produktu"/>
-            <Label Content="Uwagi"/>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" HorizontalAlignment="Center">
-            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Warehouse_document.Doc_number}"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Warehouse_document.Company}"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Warehouse_document.Document_type}"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Warehouse_document.Worker.Surname}"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Warehouse_document.Issue_date}"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Warehouse_document.Operation_date}"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Product.Product_code}"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Amount_product}"/>
-            <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" Text="{Binding Operation.Warehouse_document.Comments}"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-            <Button Content="Dodaj dokument" Command="{Binding AddDocumentCommand}" />
-        </StackPanel>
+            <StackPanel Margin="10">
+                <Label Content="Dane dokumentu"
+                       FontSize="20"
+                       HorizontalAlignment="Center"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Numer"
+                       Grid.Column="0"/>
+                    <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" 
+                         Text="{Binding DocumentName}"
+                         Grid.Column="1"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Przedsiębiorstwo"/>
+                    <ComboBox SelectedItem="{Binding ForeignCompany, Mode=TwoWay}"
+                          ItemsSource="{Binding ListOfCompany}"
+                              DisplayMemberPath="Name"
+                          Grid.Column="1"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Typ dokumentu"/>
+                    <ComboBox SelectedItem="{Binding DocumentType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          ItemsSource="{Binding ListOfDocumentsType}"
+                              DisplayMemberPath="Type_name"
+                          Grid.Column="1"/>
+
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Nasze przedsiębiorstwo"/>
+                    <ComboBox SelectedItem="{Binding OurCompany, Mode=TwoWay}"
+                          ItemsSource="{Binding ListOfCompany}"
+                              DisplayMemberPath="Name"
+                          Grid.Column="1"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Wystawiający"/>
+                    <ComboBox SelectedItem="{Binding Worker, Mode=TwoWay}"
+                          ItemsSource="{Binding ListOfWorker}"
+                              DisplayMemberPath="Surname"
+                          Grid.Column="1"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Data wystawienia"/>
+                    <DatePicker SelectedDate="{Binding IssueDate}"
+                          Grid.Column="1"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Data operacji"/>
+                    <DatePicker SelectedDate="{Binding IssueDate}"
+                          Grid.Column="1"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Uwagi"/>
+                    <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" 
+                         Text="{Binding Comments}"
+                         Grid.Column="1"/>
+                </Grid>
+
+                <Button Content="Dodaj dokument" Command="{Binding AddDocumentCommand}" 
+                        Style="{StaticResource MenuButton}"/>
+
+            </StackPanel>
+            <StackPanel Grid.Column="1"
+                        Margin="10">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Operacje"
+                       FontSize="20"
+                       HorizontalAlignment="Center"/>
+                    <Button Content="+" Command="{Binding AddOperationCommand}"
+                            Width="40"
+                            Height="40"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Foreground="{StaticResource PrimaryTextColor}"
+                            FontSize="25"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    <Button Content="-" Command="{Binding RemoveOperationCommand}"
+                            Width="40"
+                            Height="40"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Foreground="{StaticResource PrimaryTextColor}"
+                            FontSize="25"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                </StackPanel>
+                <ScrollViewer Height="280">
+                    <ItemsControl ItemsSource="{Binding Operation, Mode=TwoWay}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="Unit weight"/>
+                                    <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" 
+                                             Text="{Binding Unit_weight}"
+                                             Grid.Column="1"/>
+                                </Grid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="Waga jednostkowa"/>
+                                    <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" 
+                                             Text="{Binding Unit_net_price}"
+                                             Grid.Column="1"/>
+                                </Grid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="Produkt"/>
+                                        <ComboBox ItemsSource="{Binding DataContext.ListOfProducts, ElementName=window}"
+                                             SelectedItem="{Binding Product, Mode=TwoWay}"
+                                             DisplayMemberPath="Product_name"
+                                             Grid.Column="1"/>
+                                </Grid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="Ilość produktu"/>
+                                    <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" 
+                                             Text="{Binding Amount_product}"
+                                             Grid.Column="1"/>
+                                </Grid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="Stawka vat"/>
+                                        <ComboBox ItemsSource="{Binding DataContext.ListOfVat, ElementName=window}"
+                                             SelectedItem="{Binding VAT_rate, Mode=TwoWay}"
+                                                  DisplayMemberPath="VAT_rate1"
+                                             Grid.Column="1"/>
+                                </Grid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="Stawka vat usługi"/>
+                                    <ComboBox ItemsSource="{Binding DataContext.ListOfVat, ElementName=window}"
+                                             SelectedItem="{Binding VAT_rate1, Mode=TwoWay}"
+                                             DisplayMemberPath="VAT_rate1"
+                                             Grid.Column="1"/>
+                                </Grid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="Cena netto usługi"/>
+                                    <TextBox Style="{StaticResource ResourceKey=TextBoxStyle}" 
+                                             Text="{Binding Service_net_price}"
+                                             Grid.Column="1"/>
+                                </Grid>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                </ScrollViewer>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

@@ -41,6 +41,9 @@
             </Rectangle>
 
         </Grid>
+        
+        <!--Dodać adres i company type jako combobox-->
+
         <StackPanel Grid.Row="1" Grid.RowSpan="4" HorizontalAlignment="Center">
             <Label Content="Nazwa: "/>
             <Label Content="Numer tel.: "/>

@@ -31,9 +31,8 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,10" Orientation="Horizontal">
-            <Button Width="100" Content="Dodaj"/>
-            <Button Width="100" Content="Edytuj"/>
-            <Button Width="100" Content="Usuń"/>
+            <Button Width="100" Content="Dodaj" Style="{StaticResource MenuButton}"/>
+            <Button Width="100" Content="Edytuj" Style="{StaticResource MenuButton}"/>
         </StackPanel>
     </Grid>
 </UserControl>

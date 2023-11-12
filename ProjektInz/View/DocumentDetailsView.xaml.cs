@@ -21,7 +21,7 @@ namespace ProjektInz.View
     /// </summary>
     public partial class DocumentDetailsView : Window
     {
-        DocumentDetailsViewModel viewModel;
+        readonly DocumentDetailsViewModel viewModel;
         public DocumentDetailsView(object document)
         {
             InitializeComponent();
